@@ -12,6 +12,13 @@ jobs:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
       - run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+      - name: bun install
+        env:
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
+        run: |
+          bunx puppeteer browsers install chrome
           BUN_PM_UNTRUSTED=allow bun install
           bun ./pages/create-pdf.js
       - uses: actions/upload-artifact@v4
