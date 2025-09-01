@@ -24,10 +24,10 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: resume-en
-          path: ./docs/PORTFOLIO.pdf
+          path: ./docs/README.pdf
       - run: |
           bun ./docs/create-pdf-ja.js
       - uses: actions/upload-artifact@v4
         with:
           name: resume-ja
-          path: ./docs/ja/PORTFOLIO.pdf
+          path: ./docs/ja/README.pdf

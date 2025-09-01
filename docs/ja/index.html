@@ -147,10 +147,10 @@
 <body>
     <div class="container">
         <div id="loading" class="loading">
-            📄 Loading PORTFOLIO.md...
+            📄 Loading README.md...
         </div>
         <div id="error" class="error" style="display: none;">
-            ❌ Failed to load PORTFOLIO.md. Please make sure the file exists in the same directory.
+            ❌ Failed to load README.md. Please make sure the file exists in the same directory.
         </div>
         <div id="content" class="markdown-body" style="display: none;"></div>
     </div>
@@ -170,7 +170,7 @@
             const contentEl = document.getElementById('content');
 
             try {
-                const response = await fetch('https://skmt3p.github.io/skmt3p/PORTFOLIO.md');
+                const response = await fetch('https://skmt3p.github.io/skmt3p/README.md');
                 
                 if (!response.ok) {
                     throw new Error(`HTTP ${response.status}: ${response.statusText}`);
@@ -196,11 +196,11 @@
                 loadingEl.style.display = 'none';
                 errorEl.style.display = 'block';
                 errorEl.innerHTML = `
-                    <h3>Failed to load PORTFOLIO.md</h3>
+                    <h3>Failed to load README.md</h3>
                     <p><strong>Error:</strong> ${error.message}</p>
                     <p>Please ensure:</p>
                     <ul style="text-align: left; display: inline-block;">
-                        <li>PORTFOLIO.md exists in the same directory as this HTML file</li>
+                        <li>README.md exists in the same directory as this HTML file</li>
                         <li>You're serving this page via a web server (not file:// protocol)</li>
                         <li>The web server allows access to .md files</li>
                     </ul>

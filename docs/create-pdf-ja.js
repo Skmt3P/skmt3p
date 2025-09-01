@@ -2,15 +2,15 @@ const { mdToPdf } = require('md-to-pdf')
 const func = async () => {
   try {
     await mdToPdf(
-      { path: './docs/ja/PORTFOLIO.md' }, 
+      { path: './docs/ja/README.md' }, 
       { 
-        dest: './docs/ja/PORTFOLIO.pdf',
+        dest: './docs/ja/README.pdf',
         launch_options: {
           args: ['--no-sandbox', '--disable-setuid-sandbox']
         }
       }
     )
-    console.log('PDF作成完了: ja/PORTFOLIO.pdf')
+    console.log('PDF作成完了: ja/README.pdf')
   } catch (e) {
     console.error('エラー:', e)
     process.exit(1)
