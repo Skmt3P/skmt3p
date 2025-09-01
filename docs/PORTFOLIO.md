@@ -33,7 +33,7 @@ body_class: markdown-body
 ---
 
 <p align="center">
-<img src="https://github.com/Skmt3P/skmt3p/blob/master/static/img/heading.png">
+<img src=".//static/img/heading.png">
 </p>
 
 <h1 align="center">R.D.Sakamoto(Ryu Sakamoto)</h1>
@@ -49,10 +49,10 @@ body_class: markdown-body
 
 ## 🎫 PORTFOLIO
 
-* This is **"Workspace"** repository of PORTFOLIO, CV and RESUME of R.D.Sakamoto(Ryu Sakamoto) **"Workspace"**.
-* The Japanese version of this document can be found at [here](https://github.com/Skmt3P/skmt3p/tree/master/ja).
+* This is **"skmt3p"** repository of PORTFOLIO, CV and RESUME of R.D.Sakamoto(Ryu Sakamoto) **"skmt3p"**.
+* The Japanese version of this document can be found at [here](h./ja).
 * The PORTFOLIO can be found at [here](https://skmt3p.com).
-* The CV can be viewed and downloaded from [here](https://github.com/Skmt3P/skmt3p/tree/master/static/docs).
+* The CV can be viewed and downloaded from [here](./static/docs).
 * RESUME is available for download as a PDF from [here](https://github.com/Skmt3P/skmt3p/actions). Download the PDF file of Artifacts from the latest Actions. Both the Japanese (en) and English (en) versions are available for download. However, images and pictograms will not be displayed correctly in PDF.
 
 <br /><br />
@@ -77,7 +77,7 @@ Management, R&D
 As head of the web development department, he managed the organisation, taking into account management areas.
 
 #### Technology
-HTML, SCSS, Nuxt.js, TypeScript, Zod, Figma, Jira, Github Actions
+HTML, SCSS, Nuxt.js, TypeScript, Zod, Figma, Jira, GitHub Actions
 
 ----------
 
@@ -91,7 +91,7 @@ Team Management
 #### Business Description
 I joined the team as a full-time employee, architecting, setting coding guidelines, setting up the team, and managing the organization, as well as developing numerous websites and Web Apps as a Web Front End Engineer.
 #### Technology
-HTML, SASS, Nuxt.js, TypeScript, Zod, Figma, AdobeXD, Jira, Github Actions, CircleCI
+HTML, SASS, Nuxt.js, TypeScript, Zod, Figma, AdobeXD, Jira, GitHub Actions, CircleCI
 
 ----------
 
@@ -279,5 +279,5 @@ React.js, GatsbyJS, Nuxt.js, Vue.js, Firebase, CircleCI, GitHub, GitHubActions, 
 </p>
 
 <p align="right">
-<img src="https://github.com/Skmt3P/skmt3p/blob/master/static/img/logo_omusbridge.png" width="80px" />
+<img src=".//static/img/logo_omusbridge.png" width="80px" />
 </p>

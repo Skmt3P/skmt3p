@@ -33,7 +33,7 @@ body_class: markdown-body
 ---
 
 <p align="center">
-<img src="https://github.com/Skmt3P/skmt3p/blob/master/static/img/heading.png">
+<img src="../static/img/heading.png">
 </p>
 
 <h1 align="center">R.D.Sakamoto(Ryu Sakamoto)</h1>
@@ -78,7 +78,7 @@ Webエンジニアマネージャー
 Web開発部門の部長として、経営領域も踏まえた組織のマネジメントを行なった。
 
 #### 使用技術
-HTML, SCSS, Nuxt.js, TypeScript, Zod, Figma, Jira, Github Actions
+HTML, SCSS, Nuxt.js, TypeScript, Zod, Figma, Jira, GitHub Actions
 
 ----------
 
@@ -96,7 +96,7 @@ HTML, SCSS, Nuxt.js, TypeScript, Zod, Figma, Jira, Github Actions
 私は、正社員としてチームにジョインし、アーキテクト、コーディングガイドラインの設定、チームの立ち上げ、組織のマネジメントを行うとともに、Webフロントエンドエンジニアとして数多のWebサイトやWeb Appsの開発に従事している。
 
 #### 使用技術
-HTML, SASS, Nuxt.js, TypeScript, Zod, Figma, AdobeXD, Jira, Github Actions, CircleCI
+HTML, SASS, Nuxt.js, TypeScript, Zod, Figma, AdobeXD, Jira, GitHub Actions, CircleCI
 
 ----------
 
@@ -339,5 +339,5 @@ React.js, GatsbyJS, Nuxt.js, Vue.js, Firebase, CircleCI, GitHub, GitHubActions, 
 </p>
 
 <p align="right">
-<img src="https://github.com/Skmt3P/skmt3p/blob/master/static/img/logo_omusbridge.png" width="80px" />
+<img src="../static/img/logo_omusbridge.png" width="80px" />
 </p>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R.D.Sakamoto - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.1/github-markdown.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'DotGothic16', monospace;
+            background-color: #0d1117;
+        }
+
+        .container {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        @media (max-width: 767px) {
+            .container {
+                padding: 15px;
+            }
+        }
+
+        .markdown-body {
+            background-color: transparent;
+            color: #f0f6fc;
+        }
+
+        .markdown-body a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .markdown-body a:hover {
+            text-decoration: underline;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: #8b949e;
+            font-size: 16px;
+        }
+
+        .error {
+            text-align: center;
+            padding: 50px;
+            color: #ff7b72;
+            font-size: 16px;
+            border: 1px solid #f85149;
+            border-radius: 6px;
+            background-color: #490202;
+            margin: 20px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .markdown-body p[align="center"] a {
+            display: inline-block;
+            margin: 5px 10px;
+            padding: 8px 16px;
+            text-decoration: none;
+            color: #58a6ff;
+            border: 1px solid #58a6ff;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        .markdown-body p[align="center"] a:hover {
+            background-color: #58a6ff;
+            color: #0d1117;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(88, 166, 255, 0.2);
+        }
+
+        .markdown-body img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+        }
+
+        .markdown-body p[align="center"],
+        .markdown-body h1[align="center"] {
+            text-align: center;
+        }
+
+        .markdown-body p[align="right"] {
+            text-align: right;
+        }
+
+        .markdown-body h2 {
+            margin-top: 40px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 8px;
+        }
+
+        .markdown-body hr {
+            margin: 24px 0;
+            border: 0;
+            border-top: 1px solid #30363d;
+        }
+
+        .markdown-body {
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media print {
+            .container {
+                max-width: none;
+                margin: 0;
+                padding: 20px;
+            }
+            
+            .markdown-body p[align="center"] a {
+                color: #000 !important;
+                border: 1px solid #000 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="loading" class="loading">
+            📄 Loading PORTFOLIO.md...
+        </div>
+        <div id="error" class="error" style="display: none;">
+            ❌ Failed to load PORTFOLIO.md. Please make sure the file exists in the same directory.
+        </div>
+        <div id="content" class="markdown-body" style="display: none;"></div>
+    </div>
+
+    <script>
+        marked.setOptions({
+            breaks: true,
+            gfm: true,
+            headerIds: true,
+            sanitize: false,
+            silent: false
+        });
+
+        async function loadMarkdown() {
+            const loadingEl = document.getElementById('loading');
+            const errorEl = document.getElementById('error');
+            const contentEl = document.getElementById('content');
+
+            try {
+                const response = await fetch('./PORTFOLIO.md');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                const markdownText = await response.text();
+                const cleanedMarkdown = markdownText.replace(/^---[\s\S]*?---\n?/m, '');
+                let htmlContent = marked.parse(cleanedMarkdown);
+                htmlContent = htmlContent.replace(/src="\.\/static\//g, 'src="../static/');
+                
+                loadingEl.style.display = 'none';
+                contentEl.innerHTML = htmlContent;
+                contentEl.style.display = 'block';
+
+                enhanceContent();
+                
+                const h1 = contentEl.querySelector('h1');
+                if (h1) {
+                    document.title = h1.textContent + ' - Portfolio';
+                }
+
+            } catch (error) {
+                loadingEl.style.display = 'none';
+                errorEl.style.display = 'block';
+                errorEl.innerHTML = `
+                    <h3>Failed to load PORTFOLIO.md</h3>
+                    <p><strong>Error:</strong> ${error.message}</p>
+                    <p>Please ensure:</p>
+                    <ul style="text-align: left; display: inline-block;">
+                        <li>PORTFOLIO.md exists in the same directory as this HTML file</li>
+                        <li>You're serving this page via a web server (not file:// protocol)</li>
+                        <li>The web server allows access to .md files</li>
+                    </ul>
+                `;
+            }
+        }
+
+        function enhanceContent() {
+            const contentEl = document.getElementById('content');
+
+            const images = contentEl.querySelectorAll('img');
+            images.forEach(img => {
+                if (img.src.includes('./static/')) {
+                    img.src = img.src.replace('./static/', '../static/');
+                }
+                if (!img.alt && img.src.includes('heading')) {
+                    img.alt = 'Heading Image';
+                } else if (!img.alt && img.src.includes('logo')) {
+                    img.alt = 'Logo';
+                }
+            });
+
+            const links = contentEl.querySelectorAll('a[href^="http"]');
+            links.forEach(link => {
+                if (!link.getAttribute('target')) {
+                    link.setAttribute('target', '_blank');
+                    link.setAttribute('rel', 'noopener noreferrer');
+                }
+            });
+
+            const anchorLinks = contentEl.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const targetId = link.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                        history.pushState(null, null, '#' + targetId);
+                    }
+                });
+            });
+        }
+
+        function handleHashNavigation() {
+            if (window.location.hash) {
+                setTimeout(() => {
+                    const targetElement = document.querySelector(window.location.hash);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 100);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadMarkdown();
+            handleHashNavigation();
+        });
+
+        window.addEventListener('popstate', handleHashNavigation);
+    </script>
+</body>
+</html>
