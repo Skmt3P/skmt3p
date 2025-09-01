@@ -170,7 +170,15 @@
             const contentEl = document.getElementById('content');
 
             try {
-                const response = await fetch('https://skmt3p.github.io/skmt3p/README.md');
+                const domain = window.location.hostname;
+                let readMeUrl = './README.md';
+                if (domain.includes('skmt3p.com')) {
+                    readMeUrl = 'https://skmt3p.com/ja/README.md';
+                }
+                if (domain.includes('skmt3p.github.io')) {
+                    readMeUrl = 'https://skmt3p.github.io/skmt3p/ja/README.md';
+                }
+                const response = await fetch(readMeUrl);
                 
                 if (!response.ok) {
                     throw new Error(`HTTP ${response.status}: ${response.statusText}`);
