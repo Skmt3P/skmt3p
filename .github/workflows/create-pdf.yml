@@ -20,14 +20,14 @@ jobs:
         run: |
           bunx puppeteer browsers install chrome
           BUN_PM_UNTRUSTED=allow bun install
-          bun ./pages/create-pdf.js
+          bun ./docs/create-pdf.js
       - uses: actions/upload-artifact@v4
         with:
           name: resume-en
-          path: ./pages/PORTFOLIO.pdf
+          path: ./docs/PORTFOLIO.pdf
       - run: |
-          bun ./pages/create-pdf-ja.js
+          bun ./docs/create-pdf-ja.js
       - uses: actions/upload-artifact@v4
         with:
           name: resume-ja
-          path: ./pages/ja/PORTFOLIO.pdf
+          path: ./docs/ja/PORTFOLIO.pdf
