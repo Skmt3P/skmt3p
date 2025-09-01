@@ -2,7 +2,7 @@ name: Create PDF
 on:
   workflow_dispatch:
   push:
-    branches: ['develop']
+    branches: ['master']
 
 jobs:
   lint:
