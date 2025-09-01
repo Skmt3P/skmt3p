@@ -2,9 +2,9 @@ const { mdToPdf } = require('md-to-pdf')
 const func = async () => {
   try {
     await mdToPdf(
-      { path: './PORTFOLIO.md' }, 
+      { path: './pages/PORTFOLIO.md' }, 
       { 
-        dest: './PORTFOLIO.pdf',
+        dest: './pages/PORTFOLIO.pdf',
         launch_options: {
           args: ['--no-sandbox', '--disable-setuid-sandbox']
         }
