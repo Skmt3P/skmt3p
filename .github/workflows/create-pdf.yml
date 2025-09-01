@@ -13,14 +13,14 @@ jobs:
       - uses: oven-sh/setup-bun@v2
       - run: |
           bun install
-          bun ./create-pdf.js
+          bun ./pages/create-pdf.js
       - uses: actions/upload-artifact@v4
         with:
           name: resume-en
-          path: ./PORTFOLIO.pdf
+          path: ./pages/PORTFOLIO.pdf
       - run: |
-          bun ./create-pdf-ja.js
+          bun ./pages/create-pdf-ja.js
       - uses: actions/upload-artifact@v4
         with:
           name: resume-ja
-          path: ./ja/PORTFOLIO.pdf
+          path: ./pages/ja/PORTFOLIO.pdf
