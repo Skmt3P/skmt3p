@@ -170,7 +170,7 @@
             const contentEl = document.getElementById('content');
 
             try {
-                const response = await fetch('./PORTFOLIO.md');
+                const response = await fetch('https://skmt3p.github.io/skmt3p/PORTFOLIO.md');
                 
                 if (!response.ok) {
                     throw new Error(`HTTP ${response.status}: ${response.statusText}`);
