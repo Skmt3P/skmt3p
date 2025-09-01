@@ -1,0 +1,10 @@
+{
+  "name": "skmt3p",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "core-js": "^3.37.0",
+    "md-to-pdf": "^5.2.4",
+    "mobile-device-detect": "^0.4.3"
+  }
+}

@@ -1,0 +1,26 @@
+name: Create PDF
+on:
+  workflow_dispatch:
+  push:
+    branches: ['develop']
+
+jobs:
+  lint:
+    name: Create PDF
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: |
+          bun install
+          bun ./create-pdf.js
+      - uses: actions/upload-artifact@v4
+        with:
+          name: resume-en
+          path: ./PORTFOLIO.pdf
+      - run: |
+          bun ./create-pdf-ja.js
+      - uses: actions/upload-artifact@v4
+        with:
+          name: resume-ja
+          path: ./ja/PORTFOLIO.pdf
