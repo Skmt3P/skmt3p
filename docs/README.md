@@ -39,10 +39,11 @@ body_class: markdown-body
 <h1 align="center">R.D.Sakamoto(Ryu Sakamoto)</h1>
 
 <p align="center">
-<a href="https://github.com/Skmt3P/skmt3p#topic1">🎫 PORTFOLIO</a><br /><br />
-<a href="https://github.com/Skmt3P/skmt3p#topic2">💻 RESUME(ENGINEER)</a><br /><br />
-<a href="https://github.com/Skmt3P/skmt3p#topic3">👔 RESUME(OTHERS)</a><br /><br />
-<a href="https://github.com/Skmt3P/skmt3p#topic4">🍀 CONTACT & LINKS</a><br /><br />
+<a href="#topic1">🎫 PORTFOLIO</a><br /><br />
+<a href="#topic2">👤 ABOUT ME</a><br /><br />
+<a href="#topic3">💻 RESUME(ENGINEER)</a><br /><br />
+<a href="#topic4">👔 RESUME(OTHERS)</a><br /><br />
+<a href="#topic5">🍀 CONTACT & LINKS</a><br /><br />
 </p>
 
 <a id="topic1" href="#topic1"></a>
@@ -50,13 +51,26 @@ body_class: markdown-body
 ## 🎫 PORTFOLIO
 
 * This is **"skmt3p"** repository of PORTFOLIO, CV and RESUME of R.D.Sakamoto(Ryu Sakamoto) **"skmt3p"**.
-* The Japanese version of this document can be found at [here](h./ja).
+* The Japanese version of this document can be found at [here](./ja/).
 * The PORTFOLIO can be found at [here](https://skmt3p.com).
 * The CV can be viewed and downloaded from [here](./static/docs).
 * RESUME is available for download as a PDF from [here](https://github.com/Skmt3P/skmt3p/actions). Download the PDF file of Artifacts from the latest Actions. Both the Japanese (en) and English (en) versions are available for download. However, images and pictograms will not be displayed correctly in PDF.
 
 <br /><br />
 <a id="topic2" href="#topic2"></a>
+
+## 👤 ABOUT ME
+
+R.D.Sakamoto / Ryu Sakamoto is a multi-stack web frontend engineer and product-minded manager working across Vue / Nuxt-based frontend development, engineering management, product design, event operations, and technical communication.
+
+He began his career as an SAP ERP consultant and transitioned into frontend engineering in 2017. Since then, he has worked mainly with Vue.js, Nuxt.js, TypeScript, and modern frontend ecosystems, covering hands-on development, architecture design, coding standards, team setup, code review, and engineering management. Since 2024, he has been working as a Web Engineering Manager, leading web development teams with an organizational, business, and R&D perspective.
+
+As President / Management Board Member of OmusBridge OÜ, he works across web application development, event operations, coaching, consulting, and project management, bridging Japan and Estonia through technology and creative work. In the VR / metaverse field, he has also contributed to event websites, ticketing operations, ticketing-site management, technical onboarding, avatar and world creation, and community-driven events.
+
+He shares his work and ideas through note, Qiita, Zenn, Medium, Speaker Deck, and engineering media, combining technical writing, interviews, and public knowledge sharing. His strength lies in connecting technology, product, business, and community - turning ideas into executable plans while bringing people and teams forward together.
+
+<br /><br />
+<a id="topic3" href="#topic3"></a>
 
 ## 💻 RESUME(ENGINEER)
 "**A Multi-stack Web Frontend Engineer with two bases in Japan and Estonia.**" <br />
@@ -190,7 +204,7 @@ First, I made designs and, web Apps searching and showing DB records by Extjs an
 HPOO, ExtJS, PL/SQL, PHP
 
 <br>
-<a id="topic3" href="#topic3"></a>
+<a id="topic4" href="#topic4"></a>
 
 ## 👔 RESUME(OTHERS)
 **I can do everything from consultancy to administration to development!  President of a multi-stack Estonian company!** <br />
@@ -266,7 +280,7 @@ While creating my own products, I've touched many products that I don't use in m
 React.js, GatsbyJS, Nuxt.js, Vue.js, Firebase, CircleCI, GitHub, GitHubActions, Trello, STUDIO, Adobe XD, AppSheet, P5.js, A-Frame, AR.js, Sketch
 
 <br /><br />
-<a id="topic4" href="#topic4"></a>
+<a id="topic5" href="#topic5"></a>
 
 ## 🍀 CONTACT & LINKS
 

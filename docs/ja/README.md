@@ -39,10 +39,11 @@ body_class: markdown-body
 <h1 align="center">R.D.Sakamoto(Ryu Sakamoto)</h1>
 
 <p align="center">
-<a href="https://github.com/Skmt3P/skmt3p/tree/master/ja#topic1">🎫 PORTFOLIO</a><br /><br />
-<a href="https://github.com/Skmt3P/skmt3p/tree/master/ja#topic2">💻 RESUME(ENGINEER)</a><br /><br />
-<a href="https://github.com/Skmt3P/skmt3p/tree/master/ja#topic3">👔 RESUME(OTHERS)</a><br /><br />
-<a href="https://github.com/Skmt3P/skmt3p/tree/master/ja#topic4">🍀 CONTACT & LINKS</a><br /><br />
+<a href="#topic1">🎫 PORTFOLIO</a><br /><br />
+<a href="#topic2">👤 ABOUT ME</a><br /><br />
+<a href="#topic3">💻 RESUME(ENGINEER)</a><br /><br />
+<a href="#topic4">👔 RESUME(OTHERS)</a><br /><br />
+<a href="#topic5">🍀 CONTACT & LINKS</a><br /><br />
 </p>
 
 <a id="topic1" href="#topic1"></a>
@@ -58,6 +59,19 @@ body_class: markdown-body
 
 <br /><br />
 <a id="topic2" href="#topic2"></a>
+
+## 👤 ABOUT ME
+
+R.D.Sakamoto / 坂本龍は、Vue / Nuxtを中心としたWebフロントエンド開発、開発組織マネジメント、プロダクト設計、イベント運営、技術発信を横断して活動するマルチスタックなWebエンジニア / プロダクト志向のマネージャーです。
+
+SAP ERPコンサルタントとしてキャリアを開始し、2017年にフロントエンドエンジニアへ転身。以降、Vue.js / Nuxt.js / TypeScriptを軸に、Webアプリケーション開発、アーキテクチャ設計、コーディングガイドライン策定、チーム立ち上げ、コードレビュー、開発組織のマネジメントまで幅広く担当してきました。2024年以降はWebエンジニアマネージャーとして、経営・組織・R&Dの視点を含むWeb開発部門の運営にも携わっています。
+
+OmusBridge OÜでは、President / Management Board Memberとして、Webアプリケーション開発、イベント運営、コーチング・コンサルティング、プロジェクトマネジメントを軸に、日本とエストニアをまたいだ活動を展開しています。また、VR / メタバース領域では、イベントサイト制作、チケットサイト運用、技術オンボーディング、アバター・ワールド制作、コミュニティイベント運営にも関わってきました。
+
+note、Qiita、Zenn、Medium、Speaker Deckなどでの技術・事業・VR / メタバース領域の発信に加え、エンジニア向けメディアでの取材・執筆経験も持ちます。技術、プロダクト、事業、コミュニティの間に立ち、アイデアを実装可能な形へ落とし込み、人とチームを巻き込みながら前に進めることを得意としています。
+
+<br /><br />
+<a id="topic3" href="#topic3"></a>
 
 ## 💻 RESUME(ENGINEER)
 **「日本とエストニアの2拠点で活躍するマルチスタックなWebフロントエンジニア」** <br />
@@ -234,7 +248,7 @@ PHP, HTML, CSS,  jQuery
 HPOO, ExtJS, PL/SQL, PHP
 
 <br>
-<a id="topic3" href="#topic3"></a>
+<a id="topic4" href="#topic4"></a>
 
 ## 👔 RESUME(OTHERS)
 **「コンサルタントから事務から開発までデキる！マルチスタックなエストニア企業社長」** <br />
@@ -326,7 +340,7 @@ SAP ERP
 React.js, GatsbyJS, Nuxt.js, Vue.js, Firebase, CircleCI, GitHub, GitHubActions, Trello, STUDIO, Adobe XD, AppSheet, P5.js, A-Frame, AR.js, Sketch
 
 <br /><br />
-<a id="topic4" href="#topic4"></a>
+<a id="topic5" href="#topic5"></a>
 
 ## 🍀 CONTACT & LINKS
 

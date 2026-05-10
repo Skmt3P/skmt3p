@@ -13,53 +13,122 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: 'DotGothic16', monospace;
-            background-color: #0d1117;
+            min-height: 100vh;
+            font-family: 'DotGothic16', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            color: #d6f9dd;
+            background:
+                linear-gradient(180deg, rgba(14, 24, 18, 0.92), rgba(2, 8, 5, 0.98)),
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(118, 255, 157, 0.04) 0,
+                    rgba(118, 255, 157, 0.04) 1px,
+                    transparent 1px,
+                    transparent 4px
+                ),
+                #020805;
         }
 
         .container {
+            position: relative;
             box-sizing: border-box;
             min-width: 200px;
-            max-width: 980px;
-            margin: 0 auto;
-            padding: 45px;
+            max-width: 1040px;
+            margin: 32px auto;
+            padding: 76px 42px 42px;
+            background: rgba(4, 15, 8, 0.92);
+            border: 1px solid #2fa866;
+            border-radius: 8px;
+            box-shadow:
+                0 0 0 1px rgba(118, 255, 157, 0.08),
+                0 18px 60px rgba(0, 0, 0, 0.48),
+                inset 0 0 32px rgba(47, 168, 102, 0.08);
+        }
+
+        .container::before {
+            content: "skmt3p@portfolio:~";
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 40px;
+            box-sizing: border-box;
+            padding: 10px 18px 10px 82px;
+            overflow: hidden;
+            color: #83f6a4;
+            background: #07130b;
+            border-bottom: 1px solid #2fa866;
+            border-radius: 8px 8px 0 0;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .container::after {
+            content: "";
+            position: absolute;
+            top: 15px;
+            left: 18px;
+            width: 10px;
+            height: 10px;
+            background: #ff5f56;
+            border-radius: 50%;
+            box-shadow:
+                18px 0 0 #ffbd2e,
+                36px 0 0 #27c93f;
         }
 
         @media (max-width: 767px) {
             .container {
-                padding: 15px;
+                margin: 12px;
+                padding: 64px 18px 24px;
             }
         }
 
         .markdown-body {
             background-color: transparent;
-            color: #f0f6fc;
+            color: #d6f9dd;
+            font-family: inherit;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .markdown-body * {
+            box-sizing: border-box;
+        }
+
+        .markdown-body h1,
+        .markdown-body h2,
+        .markdown-body h3,
+        .markdown-body h4,
+        .markdown-body strong {
+            color: #f2fff4;
         }
 
         .markdown-body a {
-            color: #58a6ff;
+            color: #7ee7ff;
             text-decoration: none;
         }
 
         .markdown-body a:hover {
-            text-decoration: underline;
+            color: #b9f7ff;
+            text-decoration: none;
+            text-shadow: 0 0 8px rgba(126, 231, 255, 0.5);
         }
 
         .loading {
             text-align: center;
             padding: 50px;
-            color: #8b949e;
+            color: #83f6a4;
             font-size: 16px;
         }
 
         .error {
             text-align: center;
             padding: 50px;
-            color: #ff7b72;
+            color: #ffb8b2;
             font-size: 16px;
-            border: 1px solid #f85149;
+            border: 1px solid #ff7b72;
             border-radius: 6px;
-            background-color: #490202;
+            background-color: #310707;
             margin: 20px;
         }
 
@@ -69,21 +138,22 @@
 
         .markdown-body p[align="center"] a {
             display: inline-block;
-            margin: 5px 10px;
-            padding: 8px 16px;
+            margin: 6px 8px;
+            padding: 7px 14px;
             text-decoration: none;
-            color: #58a6ff;
-            border: 1px solid #58a6ff;
-            border-radius: 6px;
+            color: #9effb5;
+            border: 1px solid rgba(131, 246, 164, 0.78);
+            border-radius: 4px;
             transition: all 0.2s ease;
             font-weight: 500;
+            background: rgba(24, 69, 37, 0.42);
         }
 
         .markdown-body p[align="center"] a:hover {
-            background-color: #58a6ff;
-            color: #0d1117;
+            background-color: #83f6a4;
+            color: #031107;
             transform: translateY(-1px);
-            box-shadow: 0 2px 4px rgba(88, 166, 255, 0.2);
+            box-shadow: 0 0 18px rgba(131, 246, 164, 0.32);
         }
 
         .markdown-body img {
@@ -104,14 +174,33 @@
         .markdown-body h2 {
             margin-top: 40px;
             margin-bottom: 16px;
-            border-bottom: 1px solid #30363d;
+            border-bottom: 1px solid rgba(131, 246, 164, 0.32);
             padding-bottom: 8px;
+        }
+
+        .markdown-body h2::before {
+            content: "$ ";
+            color: #83f6a4;
+        }
+
+        .markdown-body h3::before,
+        .markdown-body h4::before {
+            content: "> ";
+            color: #83f6a4;
+        }
+
+        .markdown-body ul {
+            padding-left: 1.4em;
+        }
+
+        .markdown-body li::marker {
+            color: #83f6a4;
         }
 
         .markdown-body hr {
             margin: 24px 0;
             border: 0;
-            border-top: 1px solid #30363d;
+            border-top: 1px dashed rgba(131, 246, 164, 0.34);
         }
 
         .markdown-body {
