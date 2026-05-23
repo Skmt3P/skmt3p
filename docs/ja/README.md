@@ -51,8 +51,8 @@ body_class: markdown-body
 ## 🎫 PORTFOLIO
 
 * ここは、R.D.Sakamoto(Ryu Sakamoto)のPORTFOLIO・CV・RESUMEをまとめたリポジトリです。
+* 本ページの英語版は、[こちら](https://skmt3p.com)になります。
 * 当ドキュメントの英語版は、[こちら](https://github.com/Skmt3P/skmt3p/blob/master/docs/README.md)をご確認ください。
-* ポートフォリオは、[こちら](https://skmt3p.com)になります。
 * RESUME(PDF版)は、[こちら](https://github.com/Skmt3P/skmt3p/actions/workflows/create-pdf.yml)から、PDFのダウンロードが可能です。最新のActionsから、ArtifactsのPDFファイルをダウンロードしてください。日本語版(ja)と英語版(en)の両方をダウンロードすることができます。ただし、PDFでは画像や絵文字は正しく表示されません。
 
 

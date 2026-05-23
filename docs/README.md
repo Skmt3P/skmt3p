@@ -51,8 +51,8 @@ body_class: markdown-body
 ## 🎫 PORTFOLIO
 
 * This repository contains the portfolio, CV, and resume of R.D.Sakamoto (Ryu Sakamoto).
+* The Japanese version of this page is available [here](https://skmt3p.com/ja/).
 * The Japanese version of this document is available [here](https://github.com/Skmt3P/skmt3p/blob/master/docs/ja/README.md).
-* The portfolio site is available [here](https://skmt3p.com).
 * The resume PDF can be downloaded from [GitHub Actions](https://github.com/Skmt3P/skmt3p/actions/workflows/create-pdf.yml). Open the latest workflow run and download the PDF from Artifacts. Both Japanese (ja) and English (en) versions are available. Images and emoji may not be rendered correctly in the PDF.
 
 <br /><br />
