@@ -33,7 +33,7 @@ body_class: markdown-body
 ---
 
 <p align="center">
-<img src=".//static/img/heading.png">
+<img src="./static/img/heading.png">
 </p>
 
 <h1 align="center">R.D.Sakamoto(Ryu Sakamoto)</h1>
@@ -50,205 +50,225 @@ body_class: markdown-body
 
 ## 🎫 PORTFOLIO
 
-* This is **"skmt3p"** repository of PORTFOLIO, CV and RESUME of R.D.Sakamoto(Ryu Sakamoto) **"skmt3p"**.
-* The Japanese version of this document can be found at [here](./ja/).
-* The PORTFOLIO can be found at [here](https://skmt3p.com).
-* The CV can be viewed and downloaded from [here](./static/docs).
-* RESUME is available for download as a PDF from [here](https://github.com/Skmt3P/skmt3p/actions). Download the PDF file of Artifacts from the latest Actions. Both the Japanese (en) and English (en) versions are available for download. However, images and pictograms will not be displayed correctly in PDF.
+* This repository contains the portfolio, CV, and resume of R.D.Sakamoto (Ryu Sakamoto).
+* The Japanese version of this document is available [here](https://github.com/Skmt3P/skmt3p/blob/master/docs/ja/README.md).
+* The portfolio site is available [here](https://skmt3p.com).
+* The resume PDF can be downloaded from [GitHub Actions](https://github.com/Skmt3P/skmt3p/actions/workflows/create-pdf.yml). Open the latest workflow run and download the PDF from Artifacts. Both Japanese (ja) and English (en) versions are available. Images and emoji may not be rendered correctly in the PDF.
 
 <br /><br />
 <a id="topic2" href="#topic2"></a>
 
 ## 👤 ABOUT ME
 
-R.D.Sakamoto / Ryu Sakamoto is a multi-stack web frontend engineer and product-minded manager working across Vue / Nuxt-based frontend development, engineering management, product design, event operations, and technical communication.
+R.D.Sakamoto / Ryu Sakamoto is a web engineering manager and product-minded generalist who works across web development organization management, project management, Vue / Nuxt-based frontend development, AI-assisted workflows, product design, and technical communication.
 
-He began his career as an SAP ERP consultant and transitioned into frontend engineering in 2017. Since then, he has worked mainly with Vue.js, Nuxt.js, TypeScript, and modern frontend ecosystems, covering hands-on development, architecture design, coding standards, team setup, code review, and engineering management. Since 2024, he has been working as a Web Engineering Manager, leading web development teams with an organizational, business, and R&D perspective.
+He began his career as an SAP ERP consultant and transitioned into frontend engineering in 2017. Since then, he has worked mainly with Vue.js, Nuxt.js, TypeScript, and modern frontend ecosystems, covering hands-on development, architecture design, coding standards, team setup, code review, and engineering management. Since 2024, he has worked as a Web Engineering Manager and as a head of a project management department, contributing to web development and project delivery from business planning, organization management, and R&D perspectives.
 
-As President / Management Board Member of OmusBridge OÜ, he works across web application development, event operations, coaching, consulting, and project management, bridging Japan and Estonia through technology and creative work. In the VR / metaverse field, he has also contributed to event websites, ticketing operations, ticketing-site management, technical onboarding, avatar and world creation, and community-driven events.
+As President / Management Board Member of OmusBridge OÜ, he works across web application development, event operations, coaching, consulting, and project management, bridging Hokkaido and Estonia through technology and creative work. In the VR / metaverse field, he has also contributed to event websites, ticketing operations, technical onboarding, and community-driven events.
 
-He shares his work and ideas through note, Qiita, Zenn, Medium, Speaker Deck, and engineering media, combining technical writing, interviews, and public knowledge sharing. His strength lies in connecting technology, product, business, and community - turning ideas into executable plans while bringing people and teams forward together.
+He shares his work and ideas through note, Qiita, Zenn, Medium, Speaker Deck, and engineering media, combining technical writing, interviews, and public knowledge sharing. His strength lies in connecting technology, product, business, and community: turning ideas into executable plans while helping people and teams move forward.
 
 <br /><br />
 <a id="topic3" href="#topic3"></a>
 
 ## 💻 RESUME(ENGINEER)
-"**A Multi-stack Web Frontend Engineer with two bases in Japan and Estonia.**" <br />
-I mainly do front-end development for Vue.js and Nuxt.js, but I'm also a decent upstream developer.
-Multi-stack is my selling points.
-In 2017, I made a career change from an SAP ERP consultant to a front-end engineer.
+"**Most work can be done with AI, engineering, and good coordination.**" <br />
+His foundation is web frontend development with Vue.js / Nuxt.js / TypeScript. He also covers engineering management, project management, AI-assisted planning, requirements organization, implementation support, and documentation.
+In 2017, he transitioned from SAP ERP consulting to frontend engineering, then expanded his role into chief engineer, web engineering manager, and project management department lead.
 
 ----------
 
-### 202404-NOW: Web Frontend Manager at VR Inc, (Nuxt.js)
+### 202404-202509: Project Management at a VR Company (Remote)
 #### Role
-President of Web Engineer(Tech Inc.,)
+Head of Project Management Department
+
+#### Participation Phase
+- Pre-sales planning through delivery
+- Business planning
+- Organization management
+
+#### Business Description
+Led the project management department across pre-sales planning, requirements organization, progress management, delivery, business planning, and organization management. Used a technical background in web development to connect planning, sales, development, and production teams, translating ideas into executable project plans and creating conditions where teams could move effectively.
+
+#### Technologies / Tools
+AI: ChatGPT, Codex, Claude<br />
+PM / Operations: Jira, GitHub, Figma
+
+----------
+
+### 202404-202509: Web Development Management at a VR Company (Remote)
+#### Role
+Web Engineering Manager
 
 #### Participation Phase
 Management, R&D
 
 #### Business Description
-As head of the web development department, he managed the organisation, taking into account management areas.
+Managed the web development department, including team operations, technical direction, R&D, member support, code review, and development process improvement. Connected business requirements with implementation feasibility and continuously improved the Nuxt / TypeScript-centered web development workflow.
 
-#### Technology
-HTML, SCSS, Nuxt.js, TypeScript, Zod, Figma, Jira, GitHub Actions
-
-----------
-
-### 202103-202403: Development Web Pages and Web Applications at VR Inc, (Nuxt.js)
-#### Role
-Chief Front-end Engineer(Tech Inc.,)
-#### Participation Phase
-Web Architect Design, 
-Develop Web Pages and Web Applications (Nuxt.js), 
-Team Management
-#### Business Description
-I joined the team as a full-time employee, architecting, setting coding guidelines, setting up the team, and managing the organization, as well as developing numerous websites and Web Apps as a Web Front End Engineer.
-#### Technology
-HTML, SASS, Nuxt.js, TypeScript, Zod, Figma, AdobeXD, Jira, GitHub Actions, CircleCI
+#### Technologies / Tools
+Frontend: HTML, SCSS, Nuxt.js, TypeScript, Zod<br />
+Design / PM: Figma, Jira<br />
+CI / Automation: GitHub Actions
 
 ----------
 
-### 202010-202108: Development Web Applications (Nuxt.js)
+### 202103-202403: Web Pages and Web Applications Development at a VR Company (Remote)
 #### Role
-Front-end Engineer(Tech Inc.,)
+Chief Frontend Engineer
 #### Participation Phase
-Develop Web Applications (Nuxt.js)
+- Architecture Design
+- Web Pages and Web Applications Development (Nuxt.js)
+- Team Management
 #### Business Description
-I worked remotely to develop the app. I developed an online exhibition web app. I was responsible for the markup and development of the front end using Nuxt.js. I had a hard time getting used to it because it was a project with coding rules that strictly followed Atomic "Design". It was also my first experience with Nuxt.js + TypeScript in practice.
-#### Technology
+Joined the team as a full-time employee and worked on numerous websites and web applications as a frontend engineer. Also handled architecture design, coding guidelines, team setup, code review, member support, and engineering organization management.
+#### Technologies / Tools
+HTML, SASS, Nuxt.js, TypeScript, Zod, Figma, Adobe XD, Jira, GitHub Actions, CircleCI
+
+----------
+
+### 202010-202403: Web Application Development for a Web Production Company (Remote)
+#### Role
+Frontend Engineer
+#### Participation Phase
+Web Application Development
+#### Business Description
+Joined a B2B web application development project and handled frontend development. This was his first practical project using Nuxt.js + TypeScript + Firebase.
+#### Technologies / Tools
 HTML, SASS, Nuxt.js, TypeScript, Firebase, Figma, Backlog
 
 ----------
 
-### 202002-12: Development Web Applications (Nuxt.js)
+### 202002-12: Web Application Development for a Web Production Company (Remote)
 #### Role
-Front-end Engineer(Tech Inc.,)
+Frontend Engineer
 #### Participation Phase
-Develop Web Applications (Nuxt.js)
+Web Application Development
 #### Business Description
-I worked remotely to develop the app. The app is specific to the music industry and allows users to manage your playlists and albums. I was responsible for the markup and development of the front end using Nuxt.js, the API was sufficient It was not maintained and it was very difficult to work with the back-end team.
-#### Technology
+Handled frontend development for a web application project. Also contributed to architecture-level work such as introducing a Repository Factory pattern and proposing directory structure improvements.
+#### Technologies / Tools
 HTML, CSS, Nuxt.js, Laravel, Adobe XD, Trello, Chart.js
 
 ----------
 
-### 202002-202004: Development Web CMS
+### 202002-202004: Web CMS Development
 #### Role
-Front-end Engineer(Tech Inc.,)
+Frontend Engineer
 #### Participation Phase
-Develop Web CMS (Nuxt.js)
+Web CMS Development (Nuxt.js)
 #### Business Description
-I worked remotely to develop Web CMS. It's a CMS for real estate companies, where users can post and publish their text and photos. I accepted Repository and Factory style to manage API communication cleanly.
-#### Technology
+Joined a web CMS development project as a support member and handled frontend development. Also researched and selected a WYSIWYG editor, and occasionally created design mockups in Adobe XD.
+#### Technologies / Tools
 HTML, CSS, Nuxt.js, Element UI, Adobe XD
 
 ----------
 
-### 201909-201912: Development Web Applications (Nunjucks & ES6)
+### 201909-201912: Web Application Development (Nunjucks & ES6)
 #### Role
-Front-end Engineer(Recruitment agency)
+Frontend Engineer, Development Sub-lead
 #### Participation Phase
-Develop Web Applications (HTML5, CSS3, JavaScript(ES6), Backlog)
+Development
 #### Business Description
-We developed a web application (MPA) that provides a recruitment service using HTML5, CSS3, JavaScript (ES6), and Nunjucks. In addition to development, I was responsible for building the development environment, project subleaders, and code reviewers.
-#### Technology
+Handled markup from Adobe XD, frontend development, and team management for a web application project.
+#### Technologies / Tools
 HTML, CSS, Nunjucks, Adobe XD
 
 ----------
 
-### 201904-201908: Development Web Applications (Vue.js)
+### 201904-201908: Web Application Package Development (Vue.js)
 #### Role
-Front-end Engineer(Map Tech Inc.)
+Frontend Engineer, Development Lead, Internal Study Group Instructor
 #### Participation Phase
-Develop Web Applications (Vue.js, Node.js, Docker, PL/SQL, Java(Maven))
+Development
 #### Business Description
-I developed the Web App that provides map system using Mapbox and leaflet written in Vue.js and Node.js. I designed components and rewrote HTML & CSS & jQuey.js to Vue.js that passed from a design team.
-#### Technology
+Joined a packaged web application development project for map-related services. Later also served as development lead, handling frontend development, team management, coordination with PMs, sales, and designers, and Vue.js training sessions for related members.
+#### Technologies / Tools
 Vue.js, Git, Webpack, Docker, mayaa, JPA, Backlog
 
 ----------
 
-### 201810-201901: Development Web Applications (Angular)
+### 201810-201901: Web Application Development (Angular)
 #### Role
-Front-end Engineer(AI Tech Inc,), Project Leader
+Frontend Engineer, Project Leader
 #### Participation Phase
-Develop Web Applications (Angular, Python, Nest.js, Node.js, Nginx, Docker, GIt, MongoDB), Manage development team, Teach to intern how to coding
+Development
 #### Business Description
-I developed Web Apps in modern development environments. The Apps could train the models(ex. binding box) and create API that shows results determined by the learned model. I also developed RESTful API written in Nest.js and scraping scripts written in Python. The dev env is structured by Docker and Nginx and K8S. I lead one project and taught to interns.
-#### Technology
-Angular, Nest.js, Docker,  Node.js, Git, VirtualBox, Vagrant, VSCode, MySQL, PostgreSQL, MongoDB, Python
+Worked on a web application development project and also served as project leader. Handled frontend development, RESTful API development, and team management.
+#### Technologies / Tools
+Angular, Nest.js, Docker, Node.js, Git, VirtualBox, Vagrant, VSCode, MySQL, PostgreSQL, MongoDB, Python
 
 ----------
 
-### 201801-201803: Development a Web page for a photographer
+### 201801-201803: Website Development for a Photographer
 #### Role
-System Consultant, Front-end Engineer
+ICT Consultant, Frontend Engineer
 #### Participation Phase
-Develop a Web page(ES6, PHP), Designing, Negotiation.
+Requirements Definition, Design, Frontend Development
 #### Business Description
-I developed a photographer's web page. This project was completely finished by myself. I designed the page using Sketch. I developed it using JavaScript(ES6) and PHP. Of course, contract and billing work was also done by myself.
-#### Technology
-PHP, HTML, CSS,  jQuery
+Developed a website for a freelance photographer, handling the full process from contract negotiation to delivery.
+#### Technologies / Tools
+PHP, HTML, CSS, jQuery
 
 ----------
 
-### 201704-201809: Development Web Applications (Extjs, (HP)OO)
+### 201704-201809: Business Web Application Development for a Telecommunications Company
 #### Role
-Front-end Engineer(Telecommunications Tech Inc,)
+Frontend Engineer
 #### Participation Phase
-Develop Web Applications(Extjs, HP(OO), PL/SQL) Testing, Designing
+Requirements Definition, Design, Development, Testing, Operations
 #### Business Description
-First, I made designs and, web Apps searching and showing DB records by Extjs and PHP. This project was the first one I developed by Javascript in the team. I developed front-end and back-end. Second, I made RPA using HPOO. Also, I did testing.
-#### Technology
+Developed RBA workflows using HPOO and web applications using ExtJS. Handled frontend and BFF development.
+#### Technologies / Tools
 HPOO, ExtJS, PL/SQL, PHP
 
 <br>
 <a id="topic4" href="#topic4"></a>
 
 ## 👔 RESUME(OTHERS)
-**I can do everything from consultancy to administration to development!  President of a multi-stack Estonian company!** <br />
-I work as an engineer and the president of [OmusBridge OÜ](https://omusbridge.com/).
-I also work as an ICT teacher and a tecg writer.
+**A generalist working across business, technical communication, education, and community activities.** <br />
+In addition to engineering and management work, he serves as President / Management Board Member of [OmusBridge OÜ](https://omusbridge.com/).
+He has also worked as an ICT instructor, technical writer, and VR / metaverse community organizer.
 
 ### 202001-NOW: [OmusBridge OÜ](https://omusbridge.com/)
 #### Role
-The president
+President / Management Board Member
 #### Done
-For our products, we are in the phase of business planning and MVP creation. <br />
-At the Estonian startup pitch event "Brain Hunt", we were selected as one of the top 100 business ideas.<br />
-In addition, we are also working as an intermediary for worldwide engineers.
-#### Technology
-Adobe XD, Hubs
+Worked on business planning, MVP exploration, web application development, coaching, consulting, and project management for company products and client projects. <br />
+At the Estonian startup pitch event "Brain Hunt", the business idea was selected as one of the top 100 ideas.<br />
+Also worked as an intermediary for international engineering projects.
 
 ----------
 
-### 202008-NOW: VR Activities
+### 202008-202304: VR / Metaverse Activities
 #### Role
-Eventer, 3D Creator
+Event Organizer, 3D Creator
+
 #### Done
-I designed and did 3D modeling of avatars and worlds for the Metaverse service. <br />
-I also manage events for the Metaverse service.<br />
-I'm enjoying them.
-#### Technology
+Created avatars and worlds for metaverse services and organized community events in those spaces. <br />
+These activities supported hands-on learning in VR, 3D creation, and community operations.
+
+#### Technologies / Tools
 VRChat, NeosVR, ChilloutVR, Hubs, DMM Connect VR, VRM, Unity, Blender
 
 ----------
 
-### 202004-NOW: Tech Writer for Tenxia Inc.
+### 202104-202112: Tech Writer for Tenxia Inc.
 #### Role
 [And Engineer](https://and-engineer.com/) writer
 #### Done
-Responsible for everything from reporting to writing articles for engineers. <br />
+Handled interviews, research, and article writing for engineers. <br />
 https://and-engineer.com/writers/Xnb9txIAACoAIDVN/page/1
+
+#### Skills
+Interviewing, Writing, Editing, Technical Research
 
 ----------
 
-### 201903-NOW: Cafetalk Instructor
+### 201903-202112: Cafetalk Instructor
 #### Role
 [Cafetalk](https://cafetalk.com/tutor/profile/?id=145498&lang=ja) Instructor
 #### Done
-I answer a wide range of questions about programming, how to use Office products, and email software concerns that should be implemented in your company.
+Answered a wide range of questions, from programming and Office product usage to email software selection for business use.
 
 ----------
 
@@ -262,22 +282,21 @@ Customizing SAP ERP, <br />
 Develop report programs using ABAP, <br />
 Testing report programs
 #### Business Description
-I worked as a SAP ERP Consultant. <br />
-I contributed to improve client's business by introducing SAP ERP. I was good at FI, SD, MM and PI. And I can code ABAP.
-#### Technology
+Worked as an SAP ERP consultant and contributed to client business improvements through SAP ERP implementation. Covered requirements definition through operations, including customization and report development.
+#### Technologies / Tools
 SAP ERP
 
 ----------
 
-### 201704-NOW: Self-education as a hobby
+### 201704-NOW: Self-directed Learning
 #### Role
-Front-end engineer.
+Frontend Engineer
 #### Participation Phase
 Development
 #### Done
-While creating my own products, I've touched many products that I don't use in my work to spread my knowledge.
-#### Technology
-React.js, GatsbyJS, Nuxt.js, Vue.js, Firebase, CircleCI, GitHub, GitHubActions, Trello, STUDIO, Adobe XD, AppSheet, P5.js, A-Frame, AR.js, Sketch
+While creating personal products, explored many technologies and services outside daily work to broaden technical knowledge.
+#### Technologies / Tools
+React.js, GatsbyJS, Nuxt.js, Vue.js, Firebase, CircleCI, GitHub, GitHub Actions, Trello, STUDIO, Adobe XD, AppSheet, P5.js, A-Frame, AR.js, Sketch
 
 <br /><br />
 <a id="topic5" href="#topic5"></a>
@@ -293,5 +312,5 @@ React.js, GatsbyJS, Nuxt.js, Vue.js, Firebase, CircleCI, GitHub, GitHubActions, 
 </p>
 
 <p align="right">
-<img src=".//static/img/logo_omusbridge.png" width="80px" />
+<img src="./static/img/logo_omusbridge.png" width="80px" />
 </p>

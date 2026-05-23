@@ -50,11 +50,10 @@ body_class: markdown-body
 
 ## 🎫 PORTFOLIO
 
-* ここは、R.D.Sakamoto(Ryu Sakamoto)のPORTFOLIO・CV・RESUMEをまとめたリポジトリ**「Workspace」**です。
-* 当ドキュメントの英語版は、[こちら](https://github.com/Skmt3P/skmt3p)をご確認ください。
+* ここは、R.D.Sakamoto(Ryu Sakamoto)のPORTFOLIO・CV・RESUMEをまとめたリポジトリです。
+* 当ドキュメントの英語版は、[こちら](https://github.com/Skmt3P/skmt3p/blob/master/docs/README.md)をご確認ください。
 * ポートフォリオは、[こちら](https://skmt3p.com)になります。
-* CVのPDFとRESUME(Excel版)は、[こちら](https://github.com/Skmt3P/skmt3p/tree/master/static/docs)から、確認とダウンロードが可能です。CVは、私のセールスポイントをまとめた英文のPDFドキュメントです。RESUME(Excel版)は、旧来の馴染み深い形式の職務経歴書となります。
-* RESUME(PDF版)は、[こちら](https://github.com/Skmt3P/skmt3p/actions)から、PDFのダウンロードが可能です。最新のActionsから、ArtifactsのPDFファイルをダウンロードしてください。日本語版(ja)と英語版(en)の両方をダウンロードすることができます。ただし、PDFでは画像や絵文字は正しく表示されません。
+* RESUME(PDF版)は、[こちら](https://github.com/Skmt3P/skmt3p/actions/workflows/create-pdf.yml)から、PDFのダウンロードが可能です。最新のActionsから、ArtifactsのPDFファイルをダウンロードしてください。日本語版(ja)と英語版(en)の両方をダウンロードすることができます。ただし、PDFでは画像や絵文字は正しく表示されません。
 
 
 <br /><br />
@@ -62,25 +61,45 @@ body_class: markdown-body
 
 ## 👤 ABOUT ME
 
-R.D.Sakamoto / 坂本龍は、Vue / Nuxtを中心としたWebフロントエンド開発、開発組織マネジメント、プロダクト設計、イベント運営、技術発信を横断して活動するマルチスタックなWebエンジニア / プロダクト志向のマネージャーです。
+R.D.Sakamotoは、Web開発組織のマネジメント、プロジェクトマネジメント、Vue / Nuxtを中心としたWebフロントエンド開発、AI活用、プロダクト設計、技術発信を横断できるWebエンジニアリングマネージャー / プロダクト志向のジェネラリスト。
 
-SAP ERPコンサルタントとしてキャリアを開始し、2017年にフロントエンドエンジニアへ転身。以降、Vue.js / Nuxt.js / TypeScriptを軸に、Webアプリケーション開発、アーキテクチャ設計、コーディングガイドライン策定、チーム立ち上げ、コードレビュー、開発組織のマネジメントまで幅広く担当してきました。2024年以降はWebエンジニアマネージャーとして、経営・組織・R&Dの視点を含むWeb開発部門の運営にも携わっています。
+SAP ERPコンサルタントとしてキャリアを開始し、2017年にフロントエンドエンジニアへ転身。以降、Vue.js / Nuxt.js / TypeScriptを軸に、Webアプリケーション開発、アーキテクチャ設計、コーディングガイドライン策定、チーム立ち上げ、コードレビュー、開発組織のマネジメントまで幅広く担当。2024年以降はWebエンジニアマネージャーおよびプロジェクトマネジメント部門の責任者として、経営・事業計画・組織運営・R&Dの視点を含むWeb開発とプロジェクト推進に携わってきた。
 
-OmusBridge OÜでは、President / Management Board Memberとして、Webアプリケーション開発、イベント運営、コーチング・コンサルティング、プロジェクトマネジメントを軸に、日本とエストニアをまたいだ活動を展開しています。また、VR / メタバース領域では、イベントサイト制作、チケットサイト運用、技術オンボーディング、アバター・ワールド制作、コミュニティイベント運営にも関わってきました。
+OmusBridge OÜでは、President / Management Board Memberとして、Webアプリケーション開発、イベント運営、コーチング・コンサルティング、プロジェクトマネジメントを軸に、北海道とエストニアをまたいだ活動を展開。また、VR / メタバース領域では、イベントサイト制作、チケットサイト運用、技術オンボーディング、コミュニティイベント運営にも関わってきた。
 
-note、Qiita、Zenn、Medium、Speaker Deckなどでの技術・事業・VR / メタバース領域の発信に加え、エンジニア向けメディアでの取材・執筆経験も持ちます。技術、プロダクト、事業、コミュニティの間に立ち、アイデアを実装可能な形へ落とし込み、人とチームを巻き込みながら前に進めることを得意としています。
+note、Qiita、Zenn、Medium、Speaker Deckなどでの技術・事業・VR / メタバース領域の発信に加え、エンジニア向けメディアでの取材・執筆経験も持つ。技術、プロダクト、事業、コミュニティの間に立ち、アイデアを実装可能な形へ落とし込み、人とチームを巻き込みながら前に進めることを得意とする。
 
 <br /><br />
 <a id="topic3" href="#topic3"></a>
 
 ## 💻 RESUME(ENGINEER)
-**「日本とエストニアの2拠点で活躍するマルチスタックなWebフロントエンジニア」** <br />
-Vue.jsとNuxt.jsのフロントエンド開発を主とする一方で、上流工程の業務もチョットデキル。マネジメントとマルチスタックが売りなフロントエンドエンジニア。
-2017年よりSAP ERPコンサルタントから、フロントエンドエンジニアとしてキャリアチェンジを果たした。2024年にはマネジメント職に転向した。
+**「たいていの仕事はAIとデキル」** <br />
+Vue.js / Nuxt.js / TypeScriptを軸にしたWebフロントエンド開発を基盤に、開発組織マネジメント、プロジェクトマネジメント、AIを活用した企画・要件整理・実装支援・ドキュメント化まで対応できるジェネラリスト。
+2017年にSAP ERPコンサルタントからフロントエンドエンジニアへ転身し、その後チーフエンジニア、Webエンジニアマネージャー、プロジェクトマネジメント部門責任者へと担当領域を拡張してきた。
 
 ----------
 
-### 202404-NOW: VR企業Webサイト・Webアプリケーション開発(リモートワーク)
+### 202404-202509: VR企業プロジェクトマネジメント(リモートワーク)
+
+#### ポジション
+プロジェクトマネジメント部 部長
+
+#### 参画フェーズ
+- 企画営業〜納品までの全フェーズ
+- 事業計画
+- 組織運営
+
+#### 業務内容
+プロジェクトマネジメント部の部長として、企画営業、要件整理、進行管理、納品、事業計画、組織運営までを横断して担当。Web開発で培った技術理解を活かし、企画・営業・開発・制作の間に立って、プロジェクトを実行可能な計画へ落とし込み、チームが動ける状態を作った。
+
+#### 使用技術・ツール
+AI活用: ChatGPT, Codex, Claude<br />
+PM / 業務設計: Jira, GitHub, Figma
+
+
+----------
+
+### 202404-202509: VR企業Webサイト・Webアプリケーション開発(リモートワーク)
 
 #### ポジション
 Webエンジニアマネージャー
@@ -89,28 +108,30 @@ Webエンジニアマネージャー
 マネジメント, R&D
 
 #### 業務内容
-Web開発部門の部長として、経営領域も踏まえた組織のマネジメントを行なった。
+Web開発部門の責任者として、開発組織の運営、技術方針の検討、R&D、メンバー支援、コードレビュー、開発プロセス改善を担当。経営・事業側の要求と現場の実装可能性をつなぎ、Nuxt / TypeScriptを中心としたWeb開発体制を継続的に改善した。
 
-#### 使用技術
-HTML, SCSS, Nuxt.js, TypeScript, Zod, Figma, Jira, GitHub Actions
+#### 使用技術・ツール
+Frontend: HTML, SCSS, Nuxt.js, TypeScript, Zod<br />
+Design / PM: Figma, Jira<br />
+CI / Automation: GitHub Actions
 
 ----------
 
-### 202103-202403: VR企業Webサイト・Webアプリケーション開発
+### 202103-202403: VR企業Webサイト・Webアプリケーション開発(リモートワーク)
 
 #### ポジション
 チーフフロントエンドエンジニア
 
 #### 参画フェーズ
-要件定義・設計, 
-開発, 
-チームマネジメント
+- 要件定義・設計
+- 開発
+- チームマネジメント
 
 #### 業務内容
-私は、正社員としてチームにジョインし、アーキテクト、コーディングガイドラインの設定、チームの立ち上げ、組織のマネジメントを行うとともに、Webフロントエンドエンジニアとして数多のWebサイトやWeb Appsの開発に従事している。
+正社員としてチームに参画し、Webフロントエンドエンジニアとして多数のWebサイト・Webアプリケーション開発に従事。アーキテクチャ設計、コーディングガイドライン策定、チーム立ち上げ、コードレビュー、メンバー支援、開発組織のマネジメントも担当した。
 
 #### 使用技術
-HTML, SASS, Nuxt.js, TypeScript, Zod, Figma, AdobeXD, Jira, GitHub Actions, CircleCI
+HTML, SASS, Nuxt.js, TypeScript, Zod, Figma, Adobe XD, Jira, GitHub Actions, CircleCI
 
 ----------
 
@@ -155,9 +176,9 @@ HTML, CSS, Nuxt.js, Laravel, Adobe XD, Trello, Chart.js
 開発
 
 #### 業務内容
-ヘルプ要員としてC向けのWeb CMS開発のプロジェクトに参画し、フロントエンド開発を担当した。
-wysiwygエディタの調査と技術選定も行った。
-ときおり、デザインをXDで自作する場面も会った。
+支援メンバーとしてC向けのWeb CMS開発のプロジェクトに参画し、フロントエンド開発を担当した。
+WYSIWYGエディタの調査と技術選定も行った。
+必要に応じて、Adobe XDでデザイン案を作成する場面もあった。
 
 #### 使用技術
 HTML, CSS, Nuxt.js, Element UI, Adobe XD
@@ -208,10 +229,10 @@ Vue.js, Git, Webpack, Docker, mayaa, JPA, Backlog
 
 #### 業務内容
 B向けのWebアプリケーション開発のプロジェクトに参画し、PLのロールも任せていただいた。
-フロントエンドおよびRESTFul API開発を担当しながら、 チームマネジメントにも尽力した。
+フロントエンドおよびRESTful API開発を担当しながら、チームマネジメントにも尽力した。
 
 #### 使用技術
-Angular, Nest.js, Docker,  Node.js, Git, VirtualBox, Vagrant, VSCode, MySQL, PostgreSQL, MongoDB, Python
+Angular, Nest.js, Docker, Node.js, Git, VirtualBox, Vagrant, VSCode, MySQL, PostgreSQL, MongoDB, Python
 
 ----------
 
@@ -228,7 +249,7 @@ ICTコンサルタント, フロントエンドエンジニア
 契約から納品までワンストップで対応した。
 
 #### 使用技術
-PHP, HTML, CSS,  jQuery
+PHP, HTML, CSS, jQuery
 
 ----------
 
@@ -251,26 +272,23 @@ HPOO, ExtJS, PL/SQL, PHP
 <a id="topic4" href="#topic4"></a>
 
 ## 👔 RESUME(OTHERS)
-**「コンサルタントから事務から開発までデキる！マルチスタックなエストニア企業社長」** <br />
-エンジニアとして働きながら、[OmusBridge OÜ](https://omusbridge.com/)の代表取締役を務めている。
-他にも、ICT講師やライター業にも勤しんでいる。
+**「事業、発信、教育、コミュニティ活動も横断するジェネラリスト」** <br />
+エンジニア / マネージャーとして働きながら、[OmusBridge OÜ](https://omusbridge.com/)のPresident / Management Board Memberを務めている。
+他にも、ICT講師、ライター、VR / メタバース領域でのコミュニティ活動を行ってきた。
 
 ### 202001-現在: [OmusBridge OÜ](https://omusbridge.com/)
 
 #### ポジション
-代表取締役
+President / Management Board Member
 
 #### 内容
-自社プロダクトについては、事業計画策定, MVP作成のフェーズにある。<br />
+自社プロダクトの事業計画策定、MVP検討、Webアプリケーション開発、コーチング・コンサルティング、プロジェクトマネジメントを担当。<br />
 エストニアのスタートアップピッチイベント「Brain Hunt」では、TOP100のビジネスアイデアに選出された。<br />
 また、海外エンジニアの案件仲介も並行して行っている。
 
-#### 使用技術
-Adobe XD, Hubs
-
 ----------
 
-### 202008-現在: VRでの活動
+### 202008-202304: VRでの活動
 
 #### ポジション
 イベンター、 3Dクリエイター
@@ -281,11 +299,11 @@ Adobe XD, Hubs
 それらを、純粋に楽しんでいる。
 
 #### 使用技術
-Adobe XD, Hubs
+VRChat, NeosVR, ChilloutVR, Hubs, DMM Connect VR, VRM, Unity, Blender
 
 ----------
 
-### 202004-現在: 株式会社Tenxiaのライター
+### 202104-202112: 株式会社Tenxiaのライター
 
 #### ポジション
 [アンドエンジニア](https://and-engineer.com/)のライター
@@ -293,12 +311,12 @@ Adobe XD, Hubs
 #### 内容
 エンジニア向けの記事を取材から執筆まで担当([関連リンク](https://and-engineer.com/writers/Xnb9txIAACoAIDVN/page/1))
 
-#### 使用技術
-VRChat, NeosVR, ChilloutVR, Hubs, DMM Connect VR, VRM, Unity, Blender
+#### 使用技術・スキル
+取材, 執筆, 編集, 技術リサーチ
 
 ----------
 
-### 201903-現在: Cafetalk講師
+### 201903-202112: Cafetalk講師
 
 #### ポジション
 [Cafetalk](https://cafetalk.com/tutor/profile/?id=145498&lang=ja)の講師
@@ -334,10 +352,10 @@ SAP ERP
 開発
 
 #### 内容
-自分のプロダクトを作りつつ、知見を広めるために、業務で使っていないプロダクトを色々触ってきた。
+自分のプロダクトを作りつつ、知見を広めるために、業務外の技術やサービスも継続的に検証してきた。
 
 #### 使用技術
-React.js, GatsbyJS, Nuxt.js, Vue.js, Firebase, CircleCI, GitHub, GitHubActions, Trello, STUDIO, Adobe XD, AppSheet, P5.js, A-Frame, AR.js, Sketch
+React.js, GatsbyJS, Nuxt.js, Vue.js, Firebase, CircleCI, GitHub, GitHub Actions, Trello, STUDIO, Adobe XD, AppSheet, P5.js, A-Frame, AR.js, Sketch
 
 <br /><br />
 <a id="topic5" href="#topic5"></a>
