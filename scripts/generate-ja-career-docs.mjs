@@ -11,6 +11,7 @@ const __dirname = path.dirname(__filename)
 const layerRoot = path.resolve(__dirname, '..')
 const sourcePath = path.join(layerRoot, 'docs', 'ja', 'README.md')
 const outputDir = path.join(layerRoot, 'dist', 'career-docs', 'ja')
+const googleOutputDir = path.join(outputDir, 'google-apps-script')
 
 const profile = {
   displayName: 'R.D.Sakamoto(Ryu Sakamoto)',
@@ -192,6 +193,16 @@ const formatPeriod = (period) => {
 const markdownTableRow = (cells) =>
   `| ${cells.map((cell) => String(cell).replace(/\n/g, '<br>').replace(/\|/g, '\\|')).join(' | ')} |`
 
+const csvValue = (value) => {
+  const text = String(value ?? '').replace(/\r\n/g, '\n')
+  if (/[",\n]/.test(text)) {
+    return `"${text.replace(/"/g, '""')}"`
+  }
+  return text
+}
+
+const csvRows = (rows) => `${rows.map((row) => row.map(csvValue).join(',')).join('\n')}\n`
+
 const todayJa = () => {
   const formatter = new Intl.DateTimeFormat('ja-JP', {
     timeZone: 'Asia/Tokyo',
@@ -202,6 +213,18 @@ const todayJa = () => {
   const parts = Object.fromEntries(formatter.formatToParts(new Date()).map((part) => [part.type, part.value]))
   return `${parts.year}年${parts.month}月${parts.day}日`
 }
+
+const toSheetJob = (job, index) => ({
+  no: index + 1,
+  category: job.category,
+  period: formatPeriod(job.period),
+  rawPeriod: job.period,
+  title: job.title,
+  position: job.position,
+  phase: job.phase,
+  description: job.description,
+  tools: job.tools,
+})
 
 const collectData = async () => {
   const source = await fs.readFile(sourcePath, 'utf8')
@@ -232,6 +255,7 @@ const collectData = async () => {
 
   return {
     generatedAt: todayJa(),
+    profile,
     summary,
     jobs,
     skills,
@@ -415,6 +439,315 @@ const writeDocument = async (basename, title, markdown) => {
   return { markdownPath, htmlPath, pdfPath }
 }
 
+const buildCareerProfile = (data) => ({
+  generatedAt: data.generatedAt,
+  source: path.relative(layerRoot, sourcePath),
+  profile: data.profile,
+  summary: data.summary,
+  strengths: [
+    'Vue / Nuxt / TypeScriptを軸にしたWebフロントエンド開発',
+    'アーキテクチャ設計、コーディングガイドライン策定、コードレビュー、開発プロセス改善',
+    'Web開発組織のマネジメント、メンバー支援、チーム立ち上げ',
+    '企画営業、要件整理、進行管理、納品までを横断するプロジェクトマネジメント',
+    'ChatGPT / Codex / ClaudeなどのAIを活用した企画、実装支援、ドキュメント化',
+    '技術、プロダクト、事業、コミュニティをつなぐコミュニケーションと実行推進',
+  ],
+  links: data.links,
+  jobs: data.jobs.map(toSheetJob),
+  skills: data.skills.map((skill, index) => ({
+    no: index + 1,
+    skill,
+  })),
+  formDraft: {
+    note: '公開Resumeにない個人情報・学歴は空欄のままにしています。送信・共有前に必ず人間が確認してください。',
+    desiredConditions: '',
+    applicantMemo: '',
+  },
+})
+
+const buildCareerSheetScript = (careerProfile) => `const CAREER_PROFILE = ${JSON.stringify(careerProfile, null, 2)};
+
+function createCareerSheet() {
+  const spreadsheet = SpreadsheetApp.create('職務経歴管理 - ' + CAREER_PROFILE.profile.displayName);
+  createProfileSheet_(spreadsheet);
+  createCareerHistorySheet_(spreadsheet);
+  createSkillsSheet_(spreadsheet);
+  createApplicationTrackerSheet_(spreadsheet);
+  createAtlasPromptSheet_(spreadsheet);
+  spreadsheet.getSheets()[0].activate();
+  Logger.log('Created spreadsheet: ' + spreadsheet.getUrl());
+}
+
+function createProfileSheet_(spreadsheet) {
+  const sheet = prepareSheet_(spreadsheet, 'プロフィール');
+  const rows = [
+    ['項目', '内容'],
+    ['作成日', CAREER_PROFILE.generatedAt],
+    ['氏名', CAREER_PROFILE.profile.displayName],
+    ['ふりがな', CAREER_PROFILE.profile.furigana],
+    ['生年月日', CAREER_PROFILE.profile.birthDate],
+    ['性別', CAREER_PROFILE.profile.gender],
+    ['現住所', CAREER_PROFILE.profile.address],
+    ['電話', CAREER_PROFILE.profile.phone],
+    ['メール', CAREER_PROFILE.profile.email],
+    ['ポートフォリオ', CAREER_PROFILE.profile.portfolio],
+    ['GitHub', CAREER_PROFILE.profile.github],
+    ['LinkedIn', CAREER_PROFILE.profile.linkedin],
+    ['本人希望', CAREER_PROFILE.formDraft.desiredConditions],
+    ['応募メモ', CAREER_PROFILE.formDraft.applicantMemo],
+    ['注意', CAREER_PROFILE.formDraft.note],
+    ['職務要約', CAREER_PROFILE.summary.join('\\n\\n')],
+  ];
+  writeTable_(sheet, rows);
+  sheet.setColumnWidths(1, 1, 160);
+  sheet.setColumnWidths(2, 1, 640);
+  sheet.getRange('B16').setWrap(true);
+}
+
+function createCareerHistorySheet_(spreadsheet) {
+  const sheet = prepareSheet_(spreadsheet, '職務経歴');
+  const rows = [
+    ['No', '区分', '期間', '案件・活動', 'ポジション', '参画フェーズ', '業務内容', '使用技術・ツール'],
+    ...CAREER_PROFILE.jobs.map((job) => [
+      job.no,
+      job.category,
+      job.period,
+      job.title,
+      job.position,
+      job.phase,
+      job.description,
+      job.tools,
+    ]),
+  ];
+  writeTable_(sheet, rows);
+  sheet.setFrozenRows(1);
+  sheet.setColumnWidths(1, 1, 48);
+  sheet.setColumnWidths(2, 3, 140);
+  sheet.setColumnWidths(5, 2, 180);
+  sheet.setColumnWidths(7, 2, 420);
+  sheet.getDataRange().setWrap(true);
+}
+
+function createSkillsSheet_(spreadsheet) {
+  const sheet = prepareSheet_(spreadsheet, 'スキル');
+  const rows = [
+    ['No', 'スキル・ツール', '分類', '補足'],
+    ...CAREER_PROFILE.skills.map((skill) => [skill.no, skill.skill, '', '']),
+  ];
+  writeTable_(sheet, rows);
+  sheet.setFrozenRows(1);
+  sheet.setColumnWidths(1, 1, 48);
+  sheet.setColumnWidths(2, 1, 240);
+  sheet.setColumnWidths(3, 2, 180);
+}
+
+function createApplicationTrackerSheet_(spreadsheet) {
+  const sheet = prepareSheet_(spreadsheet, '応募管理');
+  const rows = [
+    ['応募先', '職種', '応募日', 'ステータス', '提出書類', '次アクション', 'メモ'],
+    ['', '', '', '未着手', '履歴書 / 職務経歴書', '', ''],
+  ];
+  writeTable_(sheet, rows);
+  const statusRule = SpreadsheetApp.newDataValidation()
+    .requireValueInList(['未着手', '準備中', '応募済', '面談中', '保留', '辞退', '完了'], true)
+    .build();
+  sheet.getRange('D2:D200').setDataValidation(statusRule);
+  sheet.setFrozenRows(1);
+  sheet.setColumnWidths(1, 7, 160);
+}
+
+function createAtlasPromptSheet_(spreadsheet) {
+  const sheet = prepareSheet_(spreadsheet, 'Atlas用プロンプト');
+  const rows = [
+    ['用途', 'プロンプト'],
+    ['シート作成確認', 'このスプレッドシートのプロフィール、職務経歴、スキル、応募管理を確認し、応募先に合わせて不足情報だけ質問してください。共有設定や送信は変更しないでください。'],
+    ['応募先向け要約', '応募先の求人票を読み、職務経歴シートの内容から一致度の高い経験を抽出して、職務経歴書の自己PR案を3案作ってください。'],
+    ['フォーム作成補助', 'create-career-form.gs の項目構成を確認し、Googleフォーム作成前に公開範囲と必須項目の妥当性を確認してください。'],
+  ];
+  writeTable_(sheet, rows);
+  sheet.setColumnWidths(1, 1, 180);
+  sheet.setColumnWidths(2, 1, 760);
+  sheet.getDataRange().setWrap(true);
+}
+
+function prepareSheet_(spreadsheet, name) {
+  const existing = spreadsheet.getSheetByName(name);
+  if (existing) {
+    existing.clear();
+    return existing;
+  }
+  const firstSheet = spreadsheet.getSheets()[0];
+  const canReuseFirstSheet =
+    spreadsheet.getSheets().length === 1 &&
+    firstSheet.getName() === 'Sheet1' &&
+    firstSheet.getLastRow() === 0 &&
+    firstSheet.getLastColumn() === 0;
+  const sheet = canReuseFirstSheet ? firstSheet.setName(name) : spreadsheet.insertSheet(name);
+  sheet.clear();
+  return sheet;
+}
+
+function writeTable_(sheet, rows) {
+  sheet.getRange(1, 1, rows.length, rows[0].length).setValues(rows);
+  const header = sheet.getRange(1, 1, 1, rows[0].length);
+  header.setFontWeight('bold').setBackground('#f3f4f6');
+  sheet.getDataRange().setVerticalAlignment('top');
+  sheet.autoResizeRows(1, rows.length);
+}
+`
+
+const buildCareerFormScript = (careerProfile) => `const CAREER_PROFILE = ${JSON.stringify(careerProfile, null, 2)};
+
+function createCareerForm() {
+  const form = FormApp.create('職務経歴入力フォーム - ' + CAREER_PROFILE.profile.displayName);
+  form.setDescription('公開Resumeをもとにした応募用情報整理フォームです。公開・送信前に必ず内容を確認してください。');
+  form.setCollectEmail(false);
+  form.addSectionHeaderItem().setTitle('基本情報');
+  form.addTextItem().setTitle('氏名').setRequired(true).setHelpText(CAREER_PROFILE.profile.displayName);
+  form.addTextItem().setTitle('ふりがな');
+  form.addTextItem().setTitle('メール');
+  form.addTextItem().setTitle('電話');
+  form.addParagraphTextItem().setTitle('現住所');
+  form.addTextItem().setTitle('ポートフォリオURL').setHelpText(CAREER_PROFILE.profile.portfolio);
+  form.addTextItem().setTitle('GitHub URL').setHelpText(CAREER_PROFILE.profile.github);
+  form.addTextItem().setTitle('LinkedIn URL').setHelpText(CAREER_PROFILE.profile.linkedin);
+
+  form.addSectionHeaderItem().setTitle('職務要約・自己PR');
+  form.addParagraphTextItem().setTitle('職務要約').setHelpText(CAREER_PROFILE.summary.join('\\n\\n'));
+  form.addCheckboxItem()
+    .setTitle('活かせる経験・強み')
+    .setChoiceValues(CAREER_PROFILE.strengths);
+  form.addParagraphTextItem().setTitle('応募先向け自己PR');
+  form.addParagraphTextItem().setTitle('本人希望・条件');
+
+  form.addSectionHeaderItem().setTitle('職務経歴');
+  form.addCheckboxItem()
+    .setTitle('提出先に強調したい職務経歴')
+    .setChoiceValues(CAREER_PROFILE.jobs.map((job) => job.period + ' ' + job.title + ' / ' + job.position));
+  form.addParagraphTextItem().setTitle('職務経歴の補足');
+
+  form.addSectionHeaderItem().setTitle('スキル');
+  form.addCheckboxItem()
+    .setTitle('強調したいスキル')
+    .setChoiceValues(CAREER_PROFILE.skills.map((skill) => skill.skill));
+  form.addParagraphTextItem().setTitle('スキルの補足');
+
+  form.addSectionHeaderItem().setTitle('応募管理');
+  form.addTextItem().setTitle('応募先');
+  form.addTextItem().setTitle('職種');
+  form.addDateItem().setTitle('応募予定日');
+  form.addParagraphTextItem().setTitle('メモ');
+  Logger.log('Created form edit URL: ' + form.getEditUrl());
+  Logger.log('Created form preview URL: ' + form.getPublishedUrl());
+}
+`
+
+const buildGoogleReadme = () => `# Google Sheets / Forms automation
+
+このディレクトリは、履歴書・職務経歴書の内容をGoogle Sheets / Google Formsへ流し込むための補助ファイルです。
+
+## Files
+
+- \`create-career-sheet.gs\`: 職務経歴管理スプレッドシートを作成するGoogle Apps Script
+- \`create-career-form.gs\`: 応募用Googleフォームを作成するGoogle Apps Script
+- \`atlas-prompt.md\`: Atlas Agentへ渡すプロンプト例
+
+## Atlasで試す手順
+
+1. Google Driveで新しいGoogle Apps Scriptプロジェクトを開く
+2. \`create-career-sheet.gs\` または \`create-career-form.gs\` の内容を貼り付ける
+3. 実行関数として \`createCareerSheet\` または \`createCareerForm\` を選ぶ
+4. 実行前に、Atlasへ「共有設定や送信は変更しないで」と明示する
+5. 作成されたURLを確認し、公開・共有・送信は人間が確認してから行う
+
+## 注意
+
+公開Resumeにない個人情報・学歴は空欄にしています。Apps Script実行後、提出先に合わせて必ず追記・確認してください。
+`
+
+const buildAtlasPrompt = () => `# Atlas prompt examples
+
+## Google Sheetsを作る
+
+\`\`\`text
+このリポジトリの dist/career-docs/ja/google-apps-script/create-career-sheet.gs を使って、
+Google Apps Scriptで職務経歴管理スプレッドシートを作ってください。
+実行前に作成されるシート構成を確認してください。
+共有設定、公開設定、外部送信は変更しないでください。
+\`\`\`
+
+## Google Formsを作る
+
+\`\`\`text
+このリポジトリの dist/career-docs/ja/google-apps-script/create-career-form.gs を使って、
+応募用の職務経歴入力フォームを作ってください。
+実行前にフォーム項目を確認してください。
+フォームの公開、回答受付、共有設定は変更しないでください。
+\`\`\`
+
+## 応募先向けに内容を調整する
+
+\`\`\`text
+求人票の内容を読み、職務経歴シートの経験・スキルから関連度が高いものを抽出してください。
+履歴書・職務経歴書の原文を直接上書きせず、提案欄に追記案だけ作ってください。
+\`\`\`
+`
+
+const writeStructuredOutputs = async (data) => {
+  await fs.mkdir(googleOutputDir, { recursive: true })
+  const careerProfile = buildCareerProfile(data)
+  const historyRows = [
+    ['No', '区分', '期間', '元期間', '案件・活動', 'ポジション', '参画フェーズ', '業務内容', '使用技術・ツール'],
+    ...careerProfile.jobs.map((job) => [
+      job.no,
+      job.category,
+      job.period,
+      job.rawPeriod,
+      job.title,
+      job.position,
+      job.phase,
+      job.description,
+      job.tools,
+    ]),
+  ]
+  const skillRows = [
+    ['No', 'スキル・ツール'],
+    ...careerProfile.skills.map((skill) => [skill.no, skill.skill]),
+  ]
+  const profileRows = [
+    ['項目', '内容'],
+    ['作成日', careerProfile.generatedAt],
+    ['氏名', careerProfile.profile.displayName],
+    ['ふりがな', careerProfile.profile.furigana],
+    ['生年月日', careerProfile.profile.birthDate],
+    ['性別', careerProfile.profile.gender],
+    ['現住所', careerProfile.profile.address],
+    ['電話', careerProfile.profile.phone],
+    ['メール', careerProfile.profile.email],
+    ['ポートフォリオ', careerProfile.profile.portfolio],
+    ['GitHub', careerProfile.profile.github],
+    ['LinkedIn', careerProfile.profile.linkedin],
+    ['職務要約', careerProfile.summary.join('\n\n')],
+  ]
+
+  const outputs = [
+    [path.join(outputDir, 'career-profile.json'), `${JSON.stringify(careerProfile, null, 2)}\n`],
+    [path.join(outputDir, 'career-history.csv'), csvRows(historyRows)],
+    [path.join(outputDir, 'skills.csv'), csvRows(skillRows)],
+    [path.join(outputDir, 'profile.csv'), csvRows(profileRows)],
+    [path.join(googleOutputDir, 'create-career-sheet.gs'), buildCareerSheetScript(careerProfile)],
+    [path.join(googleOutputDir, 'create-career-form.gs'), buildCareerFormScript(careerProfile)],
+    [path.join(googleOutputDir, 'README.md'), buildGoogleReadme()],
+    [path.join(googleOutputDir, 'atlas-prompt.md'), buildAtlasPrompt()],
+  ]
+
+  for (const [filePath, content] of outputs) {
+    await fs.writeFile(filePath, content)
+  }
+
+  return outputs.map(([filePath]) => filePath)
+}
+
 const main = async () => {
   await fs.mkdir(outputDir, { recursive: true })
   const data = await collectData()
@@ -422,12 +755,17 @@ const main = async () => {
     await writeDocument('rirekisho', '履歴書', buildRirekisho(data)),
     await writeDocument('shokumu-keirekisho', '職務経歴書', buildShokumuKeirekisho(data)),
   ]
+  const structuredOutputs = await writeStructuredOutputs(data)
 
   console.log('日本向け履歴書・職務経歴書を生成しました。')
   for (const output of outputs) {
     console.log(`- ${path.relative(layerRoot, output.markdownPath)}`)
     console.log(`- ${path.relative(layerRoot, output.htmlPath)}`)
     console.log(`- ${path.relative(layerRoot, output.pdfPath)}`)
+  }
+  console.log('Google Sheets / Forms連携用ファイルを生成しました。')
+  for (const output of structuredOutputs) {
+    console.log(`- ${path.relative(layerRoot, output)}`)
   }
 }
 
