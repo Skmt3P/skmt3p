@@ -142,6 +142,10 @@ Joined as the company's first dedicated engineer in the web frontend domain. I w
 
 I drove multiple projects while building company-wide frontend architecture. I also created coding guidelines and handled team setup and management end to end.
 
+#### Key Achievements
+
+- Some web pages I helped develop were featured and curated on external web design gallery sites.
+
 #### Technologies / Tools
 Nuxt.js, TypeScript, Zod, GitHub Actions, Jira, Figma
 
@@ -154,6 +158,8 @@ Based in Japan and abroad, I have worked mainly as an engineer while also taking
 #### 2025/01-Present: VketReal in Sapporo Operations
 
 For a virtual-domain exhibition and sales event held in Sapporo, I served as project manager and worked across planning, sales, negotiation, legal affairs, accounting, web development, project management, and event operations. I handled a wide range of responsibilities as PM for an event where more than 700 people gathered.
+
+Key achievement: Drove the planning and operations of an event attended by more than 700 people as a self-employed project manager.
 
 Technologies / Tools: Nuxt.js, TypeScript, Cloudflare, Codex
 
