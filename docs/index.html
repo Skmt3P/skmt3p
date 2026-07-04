@@ -156,6 +156,35 @@
             box-shadow: 0 0 18px rgba(131, 246, 164, 0.32);
         }
 
+        .markdown-body .link-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0 28px;
+        }
+
+        .markdown-body .link-buttons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 38px;
+            padding: 7px 14px;
+            color: #9effb5;
+            text-decoration: none;
+            border: 1px solid rgba(131, 246, 164, 0.78);
+            border-radius: 4px;
+            background: rgba(24, 69, 37, 0.42);
+            transition: all 0.2s ease;
+        }
+
+        .markdown-body .link-buttons a:hover {
+            color: #031107;
+            background-color: #83f6a4;
+            box-shadow: 0 0 18px rgba(131, 246, 164, 0.32);
+            transform: translateY(-1px);
+        }
+
         .markdown-body img {
             max-width: 100%;
             height: auto;
@@ -227,6 +256,11 @@
             }
             
             .markdown-body p[align="center"] a {
+                color: #000 !important;
+                border: 1px solid #000 !important;
+            }
+
+            .markdown-body .link-buttons a {
                 color: #000 !important;
                 border: 1px solid #000 !important;
             }
