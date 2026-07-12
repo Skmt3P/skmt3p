@@ -34,7 +34,7 @@ const CAREER_PROFILE = {
     },
     {
       "label": "Facebook",
-      "url": "https://www.facebook.com/Sakamoto3P"
+      "url": "https://www.facebook.com/Skmt3P/"
     },
     {
       "label": "GitHub",

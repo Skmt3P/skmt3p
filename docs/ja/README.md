@@ -264,7 +264,7 @@ SAP ERP(FI, SD, MM), ABAP
 
 <div class="link-buttons">
   <a href="https://skmt3p.com" target="_blank" rel="noopener noreferrer">Portfolio</a>
-  <a href="https://www.facebook.com/Sakamoto3P" target="_blank" rel="noopener noreferrer">Facebook</a>
+  <a href="https://www.facebook.com/Skmt3P/" target="_blank" rel="noopener noreferrer">Facebook</a>
   <a href="https://github.com/Skmt3P" target="_blank" rel="noopener noreferrer">GitHub</a>
   <a href="https://www.linkedin.com/in/ryu-sakamoto-91957152/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
   <a href="https://omusbridge.com" target="_blank" rel="noopener noreferrer">OmusBridge OÜ</a>
