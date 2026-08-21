@@ -6,8 +6,8 @@
     "career-docs:ja": "bun ./scripts/generate-ja-career-docs.mjs"
   },
   "dependencies": {
-    "core-js": "^3.37.0",
-    "md-to-pdf": "^5.2.4",
+    "core-js": "^3.50.0",
+    "md-to-pdf": "^5.2.5",
     "mobile-device-detect": "^0.4.3"
   },
   "trustedDependencies": [
