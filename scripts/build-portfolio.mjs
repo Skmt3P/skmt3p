@@ -18,7 +18,7 @@ const copy = {
       'I’m Ryu Sakamoto. I connect business, people and software — from an idea to something people can use.',
     statement: 'Small tools.\nRoom for possibility.',
     description:
-      'Two products from OmusBridge: a space to write, and a way to learn through everyday scenes.',
+      'Products from OmusBridge: a space to write, a way to learn, and a small city to explore.',
     role: 'OmusBridge · Product development',
     more: 'Explore the product',
     visit: 'Visit product',
@@ -32,6 +32,13 @@ const copy = {
       'Choose a lesson, work through phrases and follow your progress. Everyday scenes give the learning material a shared context.',
     langleDetail:
       'Rather than presenting only a vocabulary list, Langle organizes learning around illustrated situations. Lessons, answers and progress form a repeatable path through the material.',
+    northlight: "A small city, between snow and neon.",
+    northlightText:
+      "A 3D miniature city connecting the historic architecture of Sapporo and Tallinn through snow and neon. Walk its streets and discover its lights and everyday life.",
+    northlightDetail:
+      "Northlight brings two northern cities into an imagined neighborhood built with Babylon.js. Explore the streets at your own pace, from the shapes of historic buildings to the lights around you.",
+    northlightImage:
+      "Northlight: snow, neon and historic buildings in a 3D miniature city",
     expertise: 'Across the whole delivery.',
     skills: [
       [
@@ -87,7 +94,7 @@ const copy = {
       'Ryu Sakamoto。事業と人、ソフトウェアの間に立ち、アイデアを実際に使えるプロダクトへつなぎます。',
     statement: '小さな道具から、\nできることを広げる。',
     description:
-      '書くための場所と、場面から学ぶ語学。OmusBridgeで取り組む二つのプロダクトです。',
+      '書くための場所、場面から学ぶ語学、歩いて楽しむ小さな街。OmusBridgeで取り組むプロダクトです。',
     role: 'OmusBridge · 自社プロダクト開発',
     more: 'プロダクトについて',
     visit: 'プロダクトを開く',
@@ -101,6 +108,12 @@ const copy = {
       '教材を選び、フレーズに取り組み、進み具合を確かめる。日常の場面を手がかりに、言葉を学ぶプロダクトです。',
     langleDetail:
       '単語の一覧だけではなく、イラストで描く場面を学習の手がかりにしています。教材、回答、進捗を一つの流れにして、繰り返し取り組める構成です。',
+    northlight: "雪とネオンの間に、小さな街を。",
+    northlightText:
+      "札幌とタリンの歴史建築を、雪とネオンでつなぐ3Dの箱庭。街を歩き、灯りと暮らしをめぐる。",
+    northlightDetail:
+      "北灯街（Northlight）は、二つの北の街を一つの架空の街区へつなぐ、Babylon.js製の3D体験です。歴史建築のかたちや街の灯りを、自分のペースで歩いて楽しめます。",
+    northlightImage: "北灯街：雪とネオン、歴史建築を組み合わせた3Dの箱庭",
     expertise: '<span>構想から、</span><span>動くところまで。</span>',
     skills: [
       [
@@ -191,12 +204,12 @@ for (const [locale, t] of Object.entries(copy)) {
     <div class="window-bar"><span aria-hidden="true">├─</span><span>~/work/${name.toLowerCase()}</span><span aria-hidden="true">↗</span></div>
     <div class="project-heading"><span class="project-number">${number}</span><div><p class="eyebrow">${
     t.role
-  }</p><h3 id="${name}-title">${name}</h3></div><a class="project-arrow" href="https://${url}" aria-label="${name} — ${
+  }</p><h3 id="${name}-title">${name === 'Northlight' && ja ? '北灯街 / Northlight' : name}</h3></div><a class="project-arrow" href="https://${url}" aria-label="${name} — ${
     t.visit
   }">↗</a></div>
     <p class="project-tagline">${text}</p><p>${
     t[name.toLowerCase() + 'Text']
-  }</p>
+  }</p>${name === 'Northlight' ? `<a class="project-image" href="https://${url}" aria-label="${name} — ${t.visit}"><img src="${prefix}static/work/northlight.webp" alt="${t.northlightImage}" width="1440" height="1000" loading="lazy" decoding="async" /></a><p class="image-caption">Babylon.js · ${t.caption}</p>` : ''}
     <details><summary>${t.more}</summary><p>${detail}</p><p>${
     t.responsibility
   }</p><a href="https://${url}">${t.visit} ↗</a></details>
@@ -289,7 +302,7 @@ for (const [locale, t] of Object.entries(copy)) {
   }>JA</a></nav></header>
 <div class="terminal-workspace"><aside class="file-tree" aria-label="${
     ja ? 'ファイル案内' : 'File explorer'
-  }"><p class="tree-title">~/portfolio</p><a href="#top"><span>├─</span> whoami</a><a href="#work"><span>├─</span> work/ <small>02</small></a><a class="tree-child" href="#Kakiba-title">│  ├─ kakiba</a><a class="tree-child" href="#Langle-title">│  └─ langle</a><a href="#experience"><span>├─</span> experience</a><a href="#contact"><span>└─</span> connect</a><div class="tree-note"><span>READ / EXPLORE</span><p>${
+  }"><p class="tree-title">~/portfolio</p><a href="#top"><span>├─</span> whoami</a><a href="#work"><span>├─</span> work/ <small>03</small></a><a class="tree-child" href="#Kakiba-title">│  ├─ kakiba</a><a class="tree-child" href="#Langle-title">│  ├─ langle</a><a class="tree-child" href="#Northlight-title">│  └─ northlight</a><a href="#experience"><span>├─</span> experience</a><a href="#contact"><span>└─</span> connect</a><div class="tree-note"><span>READ / EXPLORE</span><p>${
     ja
       ? '事業と人と技術を、<br />つなぐ仕事の記録。'
       : 'A record of connecting<br />business, people & code.'
@@ -377,6 +390,12 @@ for (const [locale, t] of Object.entries(copy)) {
     t.langleDetail,
     'langle.omusb.app/',
     '02'
+  )}${product(
+    'Northlight',
+    t.northlight,
+    t.northlightDetail,
+    'northlight.omusb.app/',
+    '03'
   )}</div></section>
 <section id="experience" class="experience wrap" aria-labelledby="experience-heading"><div class="section-title"><p class="eyebrow">$ cat experience <span class="command-comment"># ${
     t.about
