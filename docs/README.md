@@ -70,7 +70,7 @@ At university, I studied media and regional revitalization, then earned the Fund
 
 After that, I moved closer to product creation through web development at Step IT Solution Co., Ltd. and through self-employed work. As a self-employed professional, I also worked outside pure engineering, including doujin event operations, writing, and ICT instruction.
 
-I joined HIKKY Co., Ltd. as the company's first dedicated engineer in the web frontend domain. I built frontend architecture used across the company, created coding guidelines, helped launch the team, and handled management responsibilities. From 2024, I led the Web-related Technology Development Department. In October 2025, after the results of an event business I had personally driven in Sapporo were recognized, I became Head of the Project Management Department. Due to career planning based in Sapporo and changes in life stage, I am scheduled to leave the company in September 2026.
+I joined HIKKY Co., Ltd. as the company's first dedicated engineer in the web frontend domain. I built frontend architecture used across the company, created coding guidelines, helped launch the team, and handled management responsibilities. From 2024, I led the Web-related Technology Development Department. In October 2025, after the results of an event business I had personally driven in Sapporo were recognized, I became Head of the Project Management Department. Due to career planning based in Sapporo and changes in life stage, I left the company in September 2026.
 
 I am currently building a career as a **TPM x FDE (Forward Deployed Engineer)** with Codex as an AI partner.
 
@@ -104,7 +104,7 @@ I am currently building a career as a **TPM x FDE (Forward Deployed Engineer)** 
 
 ## Professional Experience
 
-### 2025/10-2026/09 (scheduled): HIKKY Co., Ltd. / Head of Project Management Department
+### 2025/10-2026/09: HIKKY Co., Ltd. / Head of Project Management Department
 
 #### Scope
 Project management, planning, accounting, business-unit and company-level management

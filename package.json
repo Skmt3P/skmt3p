@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
+    "portfolio:build": "node ./scripts/build-portfolio.mjs",
     "career-docs:ja": "bun ./scripts/generate-ja-career-docs.mjs"
   },
   "dependencies": {
