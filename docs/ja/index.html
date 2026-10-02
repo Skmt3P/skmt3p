@@ -1,398 +1,175 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R.D.Sakamoto - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.1/github-markdown.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            font-family: 'DotGothic16', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-            color: #d9ecff;
-            background:
-                linear-gradient(180deg, rgba(8, 24, 45, 0.94), rgba(2, 8, 20, 0.98)),
-                repeating-linear-gradient(
-                    0deg,
-                    rgba(93, 188, 255, 0.05) 0,
-                    rgba(93, 188, 255, 0.05) 1px,
-                    transparent 1px,
-                    transparent 4px
-                ),
-                #020814;
-        }
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Ryu Sakamoto — 技術と事業をつなぐ</title>
+<meta name="description" content="Ryu Sakamoto。事業と人、ソフトウェアの間に立ち、アイデアを実際に使えるプロダクトへつなぎます。" /><meta name="theme-color" content="#0c1512" />
+<link rel="icon" href="../static/favicon.svg" type="image/svg+xml" /><link rel="stylesheet" href="../static/portfolio.css?v=decision-10" />
+<link rel="alternate" hreflang="en" href="https://skmt3p.com/" /><link rel="alternate" hreflang="ja" href="https://skmt3p.com/ja/" />
+</head><body id="top"><a class="skip-link" href="#content">本文へ移動</a>
+<div class="terminal-shell"><div class="terminal-top"><span class="terminal-lights" aria-hidden="true"><i></i><i></i><i></i></span><a class="session-brand" href="#top" aria-label="skmt3p — ホーム"><img src="../static/identity.svg" width="28" height="28" alt="" /></a><span class="session-title">skmt3p@portfolio: ~ <span class="session-kind">— terminal session</span></span><button class="motion-toggle" type="button" hidden aria-pressed="false">動きを止める</button></div>
 
-        .container {
-            position: relative;
-            box-sizing: border-box;
-            min-width: 200px;
-            max-width: 1040px;
-            margin: 32px auto;
-            padding: 76px 42px 42px;
-            background: rgba(4, 16, 35, 0.92);
-            border: 1px solid #2f8fd8;
-            border-radius: 8px;
-            box-shadow:
-                0 0 0 1px rgba(93, 188, 255, 0.12),
-                0 18px 60px rgba(0, 0, 0, 0.5),
-                inset 0 0 32px rgba(47, 143, 216, 0.1);
-        }
+<header class="site-header"><a class="identity" href="#top"><img class="identity-mark" src="../static/identity.svg" width="34" height="34" alt="" /><span class="identity-name">skmt3p</span><span class="host">@portfolio</span></a><nav aria-label="メイン"><a href="#top">[ ~ ]</a><a href="#work">[ work ] <span>プロダクト</span></a><a href="#experience">[ experience ]</a><a href="#contact">連絡先 ↗</a><a href="#command-line" aria-label="コマンド入力へ">[ $ ]</a></nav><nav class="languages" aria-label="Language"><a href="../" >EN</a><a href="../ja/" aria-current="page">JA</a></nav></header>
+<div class="terminal-workspace"><aside class="file-tree" aria-label="ファイル案内"><p class="tree-title">~/portfolio</p><a href="#top"><span>├─</span> whoami</a><a href="#work"><span>├─</span> work/ <small>02</small></a><a class="tree-child" href="#Kakiba-title">│  ├─ kakiba</a><a class="tree-child" href="#Langle-title">│  └─ langle</a><a href="#experience"><span>├─</span> experience</a><a href="#contact"><span>└─</span> connect</a><div class="tree-note"><span>READ / EXPLORE</span><p>事業と人と技術を、<br />つなぐ仕事の記録。</p><a href="#command-line">$ help ↵</a></div></aside><main id="content" tabindex="-1"><section id="home" class="hero wrap" aria-labelledby="intro-heading">
+<div class="terminal-body"><div class="intro-pane"><p class="command-label"><span>~</span> $ whoami</p><p class="eyebrow">RYU SAKAMOTO / TPM × FDE</p><h1 id="intro-heading"><span>考える。</span><span>つくる。動かす<span class="cursor" aria-hidden="true">_</span></span></h1><p class="intro-copy">Ryu Sakamoto。事業と人、ソフトウェアの間に立ち、アイデアを実際に使えるプロダクトへつなぎます。</p><section class="hero-proof" aria-label="Kakibaの設計実例"><div class="proof-heading"><span>01 / KAKIBA</span><span>企画・設計・実装 / with Codex</span></div><div class="visual-legend bridge-controls" hidden aria-label="仕事の領域を選択"><button type="button" data-bridge-stage="0" aria-pressed="false" data-description="要件整理、計画、合意形成。事業の目的を、実現可能なプロダクトへ落とし込みます。">01 / THINK</button><button type="button" data-bridge-stage="1" aria-pressed="true" data-description="Vue・Nuxt・TypeScriptを中心に、Webの設計から実装まで取り組みます。">02 / BUILD</button><button type="button" data-bridge-stage="2" aria-pressed="false" data-description="チーム運営、デリバリ、業務改善。AIを活用した開発と運用にも取り組んでいます。">03 / CONNECT</button></div><div class="proof-pair"><div class="proof-words"><p class="proof-label">設計判断</p><p class="proof-copy" aria-live="polite">原稿を保ったまま、書く面から読む面へ。段落の読み尺で現在地を示し、文章の流れを追えるようにしました。</p></div><a class="proof-image-link" href="#trace" aria-label="判断記録で実画面を詳しく見る"><img class="proof-image" src="../static/work/kakiba-hero-1.png?v=decision10" alt="Kakiba: 段落の読み尺と原稿" width="1440" height="1000" /><span>実画面 ↗</span></a></div><p class="proof-choice">書く・読むを別の原稿に分けず、同じ本文を往復する設計。</p></section><div class="quick-commands"><a href="#work"><span aria-hidden="true">↳</span> ./work <small>プロダクト</small></a><a href="#experience">cat experience <small>経歴を読む</small></a></div><a class="bridge-example" href="#trace"><span>この判断を、実例で見る</span><code>BUILD → trace/02 ↘</code></a></div>
+<figure class="signal-visual"><div class="visual-top"><span>IDEA → SYSTEM → PRODUCT</span><span aria-hidden="true">[ ASCII ]</span></div><canvas id="signal-canvas" width="680" height="480" aria-hidden="true"></canvas><pre class="ascii-fallback" aria-hidden="true">       /&#92;        /&#92;
+      /  &#92;______/  &#92;
+     /______________&#92;
+    /|  |  |  |  |  |&#92;
+   /_|__|__|__|__|__|_&#92;</pre><figcaption>人と技術のあいだに、橋をかける。 </figcaption><div class="bridge-views" hidden aria-label="橋の視点"><span aria-hidden="true">VIEW /</span><button type="button" data-bridge-view="space" aria-pressed="true">透視</button><button type="button" data-bridge-view="plan" aria-pressed="false">平面</button><button type="button" data-bridge-view="side" aria-pressed="false">側面</button></div></figure></div>
 
-        .container::before {
-            content: "skmt3p@portfolio:~";
-            position: absolute;
-            top: 0;
-            right: 0;
-            left: 0;
-            height: 40px;
-            box-sizing: border-box;
-            padding: 10px 18px 10px 82px;
-            overflow: hidden;
-            color: #8fd0ff;
-            background: #071326;
-            border-bottom: 1px solid #2f8fd8;
-            border-radius: 8px 8px 0 0;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-        }
+</section>
+<section id="work" class="work wrap" aria-labelledby="work-heading"><div class="section-title"><p class="eyebrow">$ ls ./work/ <span class="command-comment"># プロダクト</span></p><div><h2 id="work-heading">小さな道具から、<br />できることを広げる。</h2><p>書くための場所と、場面から学ぶ語学。OmusBridgeで取り組む二つのプロダクトです。</p></div></div><section id="trace" class="decision-trace" aria-labelledby="trace-heading">
+  <div class="trace-heading"><div><p class="eyebrow">$ trace --from=question --to=product</p><h3 id="trace-heading">判断の中を、歩く。</h3></div><p>課題・判断・検証を選ぶと、設計の意図が見えてきます。</p></div>
+  <div class="trace-projects" aria-label="事例を選択" hidden><button type="button" data-trace-project="Kakiba" aria-pressed="true"><span>01</span> Kakiba<small>書き始めるまで</small></button><button type="button" data-trace-project="Langle" aria-pressed="false"><span>02</span> Langle<small>最初の一問まで</small></button></div>
+  <article class="trace-case" data-trace-case="Kakiba" aria-label="Kakiba"><div class="trace-route"><section class="trace-step" data-step="0"><h4><span class="trace-node">01</span>課題</h4><span class="trace-hint">QUESTION</span><p>書く時と、読み返す時では、文章への向き合い方が違う。長い原稿では、読んでいる位置も見失いやすい。</p></section><section class="trace-step" data-step="1"><h4><span class="trace-node">02</span>設計判断</h4><span class="trace-hint">DECISION</span><p>原稿を保ったまま、書く面から読む面へ。段落の読み尺で現在地を示し、文章の流れを追えるようにしました。</p></section><section class="trace-step" data-step="2"><h4><span class="trace-node">03</span>確認したこと</h4><span class="trace-hint">IN PRACTICE</span><p>PCとスマートフォンで段落移動と、編集へ戻った時の本文一致を確認。サインイン前の試用文は保存されません。</p></section></div><div class="trace-inspect"><div class="trace-status"><span>~/work/kakiba/decision.log</span><span class="trace-position" aria-hidden="true">01 / 03</span></div><div class="trace-output" hidden><p class="trace-stage"></p><p class="trace-copy" aria-live="polite"></p></div><figure><img src="../static/work/kakiba-trace-0.webp?v=iter6" data-trace-image="../static/work/kakiba-trace-" alt="Kakiba — 開発中の画面" width="1440" height="1000" loading="lazy" /><figcaption>開発中の画面 · 操作の実画面 — 段階を選んで比較</figcaption></figure><a href="#Kakiba-title">プロダクトの説明を読む →</a></div></article><article class="trace-case" data-trace-case="Langle" aria-label="Langle"><div class="trace-route"><section class="trace-step" data-step="0"><h4><span class="trace-node">01</span>課題</h4><span class="trace-hint">QUESTION</span><p>同じ場面を、違う言語ではどう表すのか。</p></section><section class="trace-step" data-step="1"><h4><span class="trace-node">02</span>設計判断</h4><span class="trace-hint">DECISION</span><p>同じ絵の中で言葉を読み、発話と比較欄を隠して思い出す。場面と日本語を手掛かりに、答えを確かめる見開きへ。</p></section><section class="trace-step" data-step="2"><h4><span class="trace-node">03</span>確認したこと</h4><span class="trace-hint">IN PRACTICE</span><p>PCとスマートフォンで、隠す・思い出す・確かめる操作を確認。言語を切り替えると、同じ場面で発話を再び読めます。</p></section></div><div class="trace-inspect"><div class="trace-status"><span>~/work/langle/decision.log</span><span class="trace-position" aria-hidden="true">01 / 03</span></div><div class="trace-output" hidden><p class="trace-stage"></p><p class="trace-copy" aria-live="polite"></p></div><figure><img src="../static/work/langle-trace-0.webp?v=iter6" data-trace-image="../static/work/langle-trace-" alt="Langle — 開発中の画面" width="1440" height="1000" loading="lazy" /><figcaption>開発中の画面 · 操作の実画面 — 段階を選んで比較</figcaption></figure><a href="#Langle-title">プロダクトの説明を読む →</a></div></article>
+  </section><div class="projects"><article class="project" aria-labelledby="Kakiba-title">
+    <div class="window-bar"><span aria-hidden="true">├─</span><span>~/work/kakiba</span><span aria-hidden="true">↗</span></div>
+    <div class="project-heading"><span class="project-number">01</span><div><p class="eyebrow">OmusBridge · 自社プロダクト開発</p><h3 id="Kakiba-title">Kakiba</h3></div><a class="project-arrow" href="https://kakiba.omusb.app/" aria-label="Kakiba — プロダクトを開く">↗</a></div>
+    <p class="project-tagline">次の考えを、書きとめる。</p><p>考えを文章にするためのWeb上の作業場所。文書を探す検索と、書くための編集画面を一つの場所にまとめます。</p>
+    <details><summary>プロダクトについて</summary><p>書くことに集中でき、残した文書にも戻りやすい。その両立が設計のテーマです。公開インターフェースは、アカウントへの入口、検索、文書の作業場所を中心に構成しています。</p><p>OmusBridgeでは事業計画、MVP検討、Web開発を担当。ここで紹介する画面は、Codexとともに改善を進めています。</p><a href="https://kakiba.omusb.app/">プロダクトを開く ↗</a></details>
+  </article><article class="project" aria-labelledby="Langle-title">
+    <div class="window-bar"><span aria-hidden="true">├─</span><span>~/work/langle</span><span aria-hidden="true">↗</span></div>
+    <div class="project-heading"><span class="project-number">02</span><div><p class="eyebrow">OmusBridge · 自社プロダクト開発</p><h3 id="Langle-title">Langle</h3></div><a class="project-arrow" href="https://langle.omusb.app/" aria-label="Langle — プロダクトを開く">↗</a></div>
+    <p class="project-tagline">言葉を、場面から覚える。</p><p>教材を選び、フレーズに取り組み、進み具合を確かめる。日常の場面を手がかりに、言葉を学ぶプロダクトです。</p>
+    <details><summary>プロダクトについて</summary><p>単語の一覧だけではなく、イラストで描く場面を学習の手がかりにしています。教材、回答、進捗を一つの流れにして、繰り返し取り組める構成です。</p><p>OmusBridgeでは事業計画、MVP検討、Web開発を担当。ここで紹介する画面は、Codexとともに改善を進めています。</p><a href="https://langle.omusb.app/">プロダクトを開く ↗</a></details>
+  </article></div></section>
+<section id="experience" class="experience wrap" aria-labelledby="experience-heading"><div class="section-title"><p class="eyebrow">$ cat experience <span class="command-comment"># 経歴と専門領域</span></p><h2 id="experience-heading"><span>構想から、</span><span>動くところまで。</span></h2></div><div class="expertise"><article><span class="project-number">01</span><h3>実行できる計画へ</h3><p>要件整理、計画、合意形成。事業の目的を、実現可能なプロダクトへ落とし込みます。</p></article><article><span class="project-number">02</span><h3>仕組みをつくる</h3><p>Vue・Nuxt・TypeScriptを中心に、Webの設計から実装まで取り組みます。</p></article><article><span class="project-number">03</span><h3>継続して前へ進める</h3><p>チーム運営、デリバリ、業務改善。AIを活用した開発と運用にも取り組んでいます。</p></article></div><nav class="resume-directory" aria-label="経歴の目次"><a href="#topic2">職務要約 ↗</a><a href="#topic3">コアスキル ↗</a><a href="#topic4">職務経歴 ↗</a><a href="#topic5">補足活動 ↗</a><a href="#topic6">資格 ↗</a></nav><details class="resume"><summary><span><span class="file-label">experience.md</span> 仕事を支える、これまでの経験。</span><span class="resume-action">職歴・活動・資格を読む</span></summary><div class="resume-intro"><p>プロジェクトマネジメント、エンジニアリング、事業運営。詳しい経歴をまとめています。</p><a href="./README.md">テキスト版の経歴 ↗</a></div><div class="reading-column"><h2 id="topic2">職務要約</h2>
+<p><strong>「技術もビジネスもできるTPM(Technical Project Manager)」</strong> として、Web開発、プロジェクトマネジメント、事業推進、組織運営を横断し、多種多様なプロジェクトのデリバリに向けて、マネジメントから現場での開発まで幅広い役割で推進してきました。</p>
+<p>大学ではメディアや地方創生について研究し、幅広く世界に通用するITを生業とすべく、基本情報技術者の資格を取得。TIS株式会社ではSAP ERPコンサルタントとして、要件定義から設計、開発、テスト、運用まで経験し、商売のいろはを学びました。</p>
+<p>その後、自分自身の手でプロダクトを創出する側に回るべく、株式会社ステップITソリューションおよび個人事業でWeb開発に従事。個人事業では、同人イベントの進行管理、ライター業、ICT講師など、エンジニアリング以外の領域にも参画しました。</p>
+<p>株式会社HIKKYには、Webフロントエンド領域における最初の専任エンジニアとして入社。全社で扱うフロントエンドアーキテクチャの構築、コーディングガイドライン策定、チーム立ち上げ、マネジメントを担当しました。2024年からはWeb関連技術開発部の部長として開発組織を運営し、2025年10月には個人で推進していた札幌でのイベント事業の成果が認められ、プロジェクトマネジメント部の部長に就任しました。札幌を拠点としたキャリア構築ならびにライフステージの変更に伴い、2026年9月に同社を退職しました。</p>
+<p>現在は、AIのCodexをパートナーに、<strong>TPM x FDE(Forward Deployed Engineer)</strong> としてのキャリアを形成中です。</p>
+<br>
+<h2 id="topic3">コアスキル</h2>
+<h3 id="tpm--プロジェクトマネジメント">TPM / プロジェクトマネジメント</h3>
+<ul>
+<li>企画営業、要件整理、進行管理、納品、事業計画、組織運営を横断したプロジェクト推進</li>
+<li>企画・営業・開発・制作の間に立った計画化、合意形成、実行支援</li>
+<li>アップセル / クロスセルを見据えた提案、デリバリ、スケール設計</li>
+<li>コスト / 売上管理、改善案の提案、組織改善案の検討と実行</li>
+</ul>
+<h3 id="web開発--技術マネジメント">Web開発 / 技術マネジメント</h3>
+<ul>
+<li>Vue.js / Nuxt.js / TypeScript を中心としたWebフロントエンド開発</li>
+<li>フロントエンドアーキテクチャ設計、コーディングガイドライン策定、コードレビュー</li>
+<li>Zod、GitHub Actions、Jira、Figmaを用いた開発体制改善</li>
+<li>R&amp;D、メンバー支援、開発プロセス改善</li>
+</ul>
+<h3 id="ai活用--fde">AI活用 / FDE</h3>
+<ul>
+<li>ChatGPT、Codex、Claudeを用いた企画、要件整理、実装支援、ドキュメント化</li>
+<li>現場課題を技術・運用・事業の観点から分解し、実行可能な形へ落とし込む支援</li>
+<li>AIとローカル開発環境を組み合わせた、継続的な業務改善とプロダクト検証</li>
+</ul>
+<br>
+<h2 id="topic4">職務経歴</h2>
+<h3 id="202510-202609-株式会社hikky--プロジェクトマネジメント部-部長">2025/10-2026/09: 株式会社HIKKY / プロジェクトマネジメント部 部長</h3>
+<h4 id="領域">領域</h4>
+<p>プロジェクトマネジメント, 企画, 経理, 事業部〜全社レベルでのマネジメント</p>
+<h4 id="業務内容">業務内容</h4>
+<p>プロジェクトマネジメント部の部長として、企画営業、要件整理、進行管理、納品、事業計画、組織運営を横断して担当。Web開発で培った技術理解を活かし、企画・営業・開発・制作の間に立って、プロジェクトを実行可能な計画へ落とし込み、推進しました。</p>
+<p>複数プロジェクトで、デリバリだけでなく、アップセルやクロスセルのスケールを実現。また、現場レベルの業務にとどまらず、ボードメンバーに対するコストや売上の管理・改善案の提案から実行、組織改善案の検討など、全社事業レベルの業務にも参画しました。</p>
+<h4 id="使用技術・ツール">使用技術・ツール</h4>
+<p>ChatGPT, Codex, Claude, Jira, GitHub, Figma</p>
+<hr>
+<h3 id="202404-202509-株式会社hikky--web関連技術開発部-部長">2024/04-2025/09: 株式会社HIKKY / Web関連技術開発部 部長</h3>
+<h4 id="領域-1">領域</h4>
+<p>要件定義, 設計, 開発, 事業部マネジメント</p>
+<h4 id="業務内容-1">業務内容</h4>
+<p>Web開発部門の責任者として、開発組織の運営、技術方針の検討、R&amp;D、メンバー支援、コードレビュー、開発プロセス改善を担当。経営・事業側の要求と現場の実装可能性をつなぎ、Nuxt / TypeScriptを中心としたWeb開発体制を継続的に改善しました。</p>
+<h4 id="使用技術・ツール-1">使用技術・ツール</h4>
+<p>Nuxt.js, TypeScript, Zod, GitHub Actions, Jira, Figma</p>
+<hr>
+<h3 id="202105-202403-株式会社hikky--チーフフロントエンドエンジニア">2021/05-2024/03: 株式会社HIKKY / チーフフロントエンドエンジニア</h3>
+<h4 id="領域-2">領域</h4>
+<p>要件定義, 設計, 開発, チームマネジメント</p>
+<h4 id="業務内容-2">業務内容</h4>
+<p>Webフロントエンド領域における最初の専任エンジニアとして参画。to C / to Bの複数案件におけるWebアプリケーションやVRアプリのフロントエンド / BFF部分の開発を担当しました。</p>
+<p>各種案件を推進するとともに、全社的に扱うフロントエンドアーキテクチャを構築。コーディングガイドライン策定など、チームの立ち上げからマネジメントまでワンストップで実現しました。</p>
+<h4 id="主な成果">主な成果</h4>
+<ul>
+<li>開発に携わったWebページが、外部のWebデザイン紹介サイトで掲載・まとめられました。</li>
+</ul>
+<h4 id="使用技術・ツール-2">使用技術・ツール</h4>
+<p>Nuxt.js, TypeScript, Zod, GitHub Actions, Jira, Figma</p>
+<hr>
+<h3 id="201810-現在-個人事業主">2018/10-現在: 個人事業主</h3>
+<p>国内外を拠点に、エンジニア業を中心として、Web開発、プロジェクトマネジメント、イベント運営、講師、執筆など、複数領域の案件に従事しています。</p>
+<h4 id="202501-現在-vketreal-in-札幌-運営">2025/01-現在: VketReal in 札幌 運営</h4>
+<p>札幌で開催するバーチャル分野の展示・即売会において、プロジェクトマネージャーとして企画、営業、折衝、法務、経理、Web開発、プロジェクト管理、イベント運営を担当。700人以上が一堂に集うイベントのPMとして、各種職務に従事しました。</p>
+<p>主な成果: 700人以上が来場するイベントの企画・運営を、個人事業主案件としてプロジェクトマネージャーの立場で推進しました。</p>
+<p>使用技術・ツール: Nuxt.js, TypeScript, Cloudflare, Codex</p>
+<h4 id="202010-202103-web制作企業におけるwebアプリケーション開発">2020/10-2021/03: Web制作企業におけるWebアプリケーション開発</h4>
+<p>B向けWebアプリケーション開発において、フロントエンド開発を担当しました。</p>
+<p>使用技術・ツール: Nuxt.js, TypeScript, Firebase</p>
+<h4 id="202002-202012-web制作企業におけるwebアプリケーション開発">2020/02-2020/12: Web制作企業におけるWebアプリケーション開発</h4>
+<p>C向けWebアプリケーション開発において、Repository-Factoryの導入やアーキテクチャ改善提案など、アーキテクト領域から幅広い開発支援を実施しました。</p>
+<p>使用技術・ツール: HTML, CSS, Nuxt.js, Laravel, Adobe XD, Trello, Chart.js</p>
+<h4 id="202002-202004-web制作企業におけるcms開発">2020/02-2020/04: Web制作企業におけるCMS開発</h4>
+<p>C向けWeb CMS開発において、フロントエンド開発、WYSIWYGエディタ選定、デザイン提案を担当しました。</p>
+<p>使用技術・ツール: Nuxt.js, Element UI, HTML, CSS, Adobe XD</p>
+<h4 id="201909-201912-web制作企業における各案件のwebアプリケーション開発">2019/09-2019/12: Web制作企業における各案件のWebアプリケーション開発</h4>
+<p>複数案件でのWebフロントエンド開発とチーム管理を担当しました。</p>
+<p>使用技術・ツール: Nunjucks, HTML, CSS, Adobe XD</p>
+<h4 id="201904-201908-地図企業におけるwebアプリケーションパッケージ開発">2019/04-2019/08: 地図企業におけるWebアプリケーションパッケージ開発</h4>
+<p>C向けプロダクトならびにB向けパッケージの開発とチームマネジメントを実施。PM・営業・デザイナーとの折衝、Vue.js勉強会講師も担当しました。</p>
+<p>使用技術・ツール: Vue.js, Git, Docker, Webpack, Backlog</p>
+<h4 id="201810-201901-ai企業におけるwebアプリケーション開発">2018/10-2019/01: AI企業におけるWebアプリケーション開発</h4>
+<p>AI画像学習サービスのフロントエンドおよびAPI部分を開発。プロジェクトリーダー、フロントエンドエンジニア、バックエンドエンジニアとして、REST API開発、フロントエンド開発、チームマネジメントを担当しました。</p>
+<p>使用技術・ツール: Angular, Nest.js, Node.js, Docker, MySQL, PostgreSQL, MongoDB, Python</p>
+<h4 id="201801-201803-サービスサイト開発">2018/01-2018/03: サービスサイト開発</h4>
+<p>個人事業主のフォトグラファー向けWebサイトを開発。要件定義、デザイン、概要設計、フロントエンド、CMS開発を担当しました。</p>
+<p>使用技術・ツール: PHP, HTML, CSS, jQuery</p>
+<hr>
+<h3 id="201704-201809-株式会社ステップitソリューション--rpaエンジニア・webフロントエンドエンジニア">2017/04-2018/09: 株式会社ステップITソリューション / RPAエンジニア・Webフロントエンドエンジニア</h3>
+<h4 id="領域-3">領域</h4>
+<p>概要設計, 詳細設計, 開発, QA</p>
+<h4 id="業務内容-3">業務内容</h4>
+<p>通信系企業における、業務管理者向けWebアプリならびにHPOOを用いたRPAの開発を担当。自分自身でプロダクトを創出できる実力を身につけるため、コンサルタントからエンジニア職へ転向し、エラーが出ても影響が最小限に済むフェイルセーフな機能をデリバリしました。</p>
+<h4 id="使用技術・ツール-3">使用技術・ツール</h4>
+<p>HPOO, ExtJS, shell, VBA</p>
+<hr>
+<h3 id="201404-201703-tis株式会社--sap-erpコンサルタント">2014/04-2017/03: TIS株式会社 / SAP ERPコンサルタント</h3>
+<h4 id="領域-4">領域</h4>
+<p>要件定義, 設計, 開発, テスト, 運用</p>
+<h4 id="業務内容-4">業務内容</h4>
+<p>新卒入社で、SAP ERPのコンサルタントとして従事。独立系ベンダー企業のプライムベンダーとして案件に参画し、SAP ERPのカスタマイズや帳票作成、業務システムの要件定義から運用までワンストップで担当しました。</p>
+<p>上流工程から下流工程まで、パートナー企業のベンダーと共に携わり、ウォーターフォールでの要件定義から開発まで、そのいろはを身につけました。</p>
+<h4 id="使用技術・ツール-4">使用技術・ツール</h4>
+<p>SAP ERP(FI, SD, MM), ABAP</p>
+<br>
+<h2 id="topic5">補足活動</h2>
+<p>職務経歴とは分けて、発信・教育・コミュニティ活動として以下の経験があります。</p>
+<ul>
+<li><strong>OmusBridge OÜ President / Management Board Member</strong>: 自社プロダクトの事業計画策定、MVP検討、Webアプリケーション開発、コーチング・コンサルティング、プロジェクトマネジメントを担当。</li>
+<li><strong>Webメディア &quot;&amp;エンジニア&quot; 記事執筆</strong>: 技術者への取材から記事執筆まで担当。</li>
+<li><strong>Cafetalk ICT講師</strong>: Office製品の使い方からプログラミングまで、多岐にわたる相談に対応。</li>
+<li><strong>VR / メタバース領域での活動</strong>: アバターやワールドのデザイン・モデリング、メタバースサービス内でのイベント主催を経験。</li>
+</ul>
+<br>
+<h2 id="topic6">資格</h2>
+<ul>
+<li>基本情報技術者</li>
+<li>応用情報技術者</li>
+<li>SAP認定コンサルタント(FI)</li>
+<li>日商簿記検定3級</li>
+<li>普通自動車免許</li>
+<li>普通二輪免許</li>
+</ul>
+<br>
+<h2 id="topic7">CONTACT &amp; LINKS</h2>
+<div class="link-buttons">
+  <a href="https://skmt3p.com" target="_blank" rel="noopener noreferrer">Portfolio</a>
+  <a href="https://www.facebook.com/Skmt3P/" target="_blank" rel="noopener noreferrer">Facebook</a>
+  <a href="https://github.com/Skmt3P" target="_blank" rel="noopener noreferrer">GitHub</a>
+  <a href="https://www.linkedin.com/in/ryu-sakamoto-91957152/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <a href="https://omusbridge.com" target="_blank" rel="noopener noreferrer">OmusBridge OÜ</a>
+</div>
 
-        .container::after {
-            content: "";
-            position: absolute;
-            top: 15px;
-            left: 18px;
-            width: 10px;
-            height: 10px;
-            background: #ff5f56;
-            border-radius: 50%;
-            box-shadow:
-                18px 0 0 #ffbd2e,
-                36px 0 0 #27c93f;
-        }
-
-        @media (max-width: 767px) {
-            .container {
-                margin: 12px;
-                padding: 64px 18px 24px;
-            }
-        }
-
-        .markdown-body {
-            background-color: transparent;
-            color: #d9ecff;
-            font-family: inherit;
-            font-size: 15px;
-            line-height: 1.8;
-        }
-
-        .markdown-body * {
-            box-sizing: border-box;
-        }
-
-        .markdown-body h1,
-        .markdown-body h2,
-        .markdown-body h3,
-        .markdown-body h4,
-        .markdown-body strong {
-            color: #f3faff;
-        }
-
-        .markdown-body a {
-            color: #8fd0ff;
-            text-decoration: none;
-        }
-
-        .markdown-body a:hover {
-            color: #c9ecff;
-            text-decoration: none;
-            text-shadow: 0 0 8px rgba(143, 208, 255, 0.5);
-        }
-
-        .loading {
-            text-align: center;
-            padding: 50px;
-            color: #8fd0ff;
-            font-size: 16px;
-        }
-
-        .error {
-            text-align: center;
-            padding: 50px;
-            color: #ffb8b2;
-            font-size: 16px;
-            border: 1px solid #ff7b72;
-            border-radius: 6px;
-            background-color: #310707;
-            margin: 20px;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .markdown-body p[align="center"] a {
-            display: inline-block;
-            margin: 6px 8px;
-            padding: 7px 14px;
-            text-decoration: none;
-            color: #b8e2ff;
-            border: 1px solid rgba(143, 208, 255, 0.78);
-            border-radius: 4px;
-            transition: all 0.2s ease;
-            font-weight: 500;
-            background: rgba(18, 74, 132, 0.42);
-        }
-
-        .markdown-body p[align="center"] a:hover {
-            background-color: #8fd0ff;
-            color: #031022;
-            transform: translateY(-1px);
-            box-shadow: 0 0 18px rgba(143, 208, 255, 0.34);
-        }
-
-        .markdown-body .link-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin: 20px 0 28px;
-        }
-
-        .markdown-body .link-buttons a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 38px;
-            padding: 7px 14px;
-            color: #b8e2ff;
-            text-decoration: none;
-            border: 1px solid rgba(143, 208, 255, 0.78);
-            border-radius: 4px;
-            background: rgba(18, 74, 132, 0.42);
-            transition: all 0.2s ease;
-        }
-
-        .markdown-body .link-buttons a:hover {
-            color: #031022;
-            background-color: #8fd0ff;
-            box-shadow: 0 0 18px rgba(143, 208, 255, 0.34);
-            transform: translateY(-1px);
-        }
-
-        .markdown-body img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 6px;
-        }
-
-        .markdown-body p[align="center"],
-        .markdown-body h1[align="center"] {
-            text-align: center;
-        }
-
-        .markdown-body p[align="right"] {
-            text-align: right;
-        }
-
-        .markdown-body h2 {
-            margin-top: 40px;
-            margin-bottom: 16px;
-            border-bottom: 1px solid rgba(143, 208, 255, 0.34);
-            padding-bottom: 8px;
-        }
-
-        .markdown-body h2::before {
-            content: "$ ";
-            color: #8fd0ff;
-        }
-
-        .markdown-body h3::before,
-        .markdown-body h4::before {
-            content: "> ";
-            color: #8fd0ff;
-        }
-
-        .markdown-body ul {
-            padding-left: 1.4em;
-        }
-
-        .markdown-body li::marker {
-            color: #8fd0ff;
-        }
-
-        .markdown-body hr {
-            margin: 24px 0;
-            border: 0;
-            border-top: 1px dashed rgba(143, 208, 255, 0.36);
-        }
-
-        .markdown-body {
-            opacity: 0;
-            animation: fadeIn 0.5s ease-in-out forwards;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media print {
-            .container {
-                max-width: none;
-                margin: 0;
-                padding: 20px;
-            }
-            
-            .markdown-body p[align="center"] a {
-                color: #000 !important;
-                border: 1px solid #000 !important;
-            }
-
-            .markdown-body .link-buttons a {
-                color: #000 !important;
-                border: 1px solid #000 !important;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div id="loading" class="loading">
-            📄 Loading README.md...
-        </div>
-        <div id="error" class="error" style="display: none;">
-            ❌ Failed to load README.md. Please make sure the file exists in the same directory.
-        </div>
-        <div id="content" class="markdown-body" style="display: none;"></div>
-    </div>
-
-    <script>
-        marked.setOptions({
-            breaks: true,
-            gfm: true,
-            headerIds: true,
-            sanitize: false,
-            silent: false
-        });
-
-        async function loadMarkdown() {
-            const loadingEl = document.getElementById('loading');
-            const errorEl = document.getElementById('error');
-            const contentEl = document.getElementById('content');
-
-            try {
-                const domain = window.location.hostname;
-                let readMeUrl = './README.md';
-                if (domain.includes('skmt3p.com')) {
-                    readMeUrl = 'https://skmt3p.com/ja/README.md';
-                }
-                if (domain.includes('skmt3p.github.io')) {
-                    readMeUrl = 'https://skmt3p.github.io/skmt3p/ja/README.md';
-                }
-                const response = await fetch(readMeUrl);
-                
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-                }
-
-                const markdownText = await response.text();
-                const cleanedMarkdown = markdownText.replace(/^---[\s\S]*?---\n?/m, '');
-                let htmlContent = marked.parse(cleanedMarkdown);
-                htmlContent = htmlContent.replace(/src="\.\/static\//g, 'src="../static/');
-                
-                loadingEl.style.display = 'none';
-                contentEl.innerHTML = htmlContent;
-                contentEl.style.display = 'block';
-
-                enhanceContent();
-                
-                const h1 = contentEl.querySelector('h1');
-                if (h1) {
-                    document.title = h1.textContent + ' - Portfolio';
-                }
-
-            } catch (error) {
-                loadingEl.style.display = 'none';
-                errorEl.style.display = 'block';
-                errorEl.innerHTML = `
-                    <h3>Failed to load README.md</h3>
-                    <p><strong>Error:</strong> ${error.message}</p>
-                    <p>Please ensure:</p>
-                    <ul style="text-align: left; display: inline-block;">
-                        <li>README.md exists in the same directory as this HTML file</li>
-                        <li>You're serving this page via a web server (not file:// protocol)</li>
-                        <li>The web server allows access to .md files</li>
-                    </ul>
-                `;
-            }
-        }
-
-        function enhanceContent() {
-            const contentEl = document.getElementById('content');
-
-            const images = contentEl.querySelectorAll('img');
-            images.forEach(img => {
-                if (img.src.includes('./static/')) {
-                    img.src = img.src.replace('./static/', '../static/');
-                }
-                if (!img.alt && img.src.includes('heading')) {
-                    img.alt = 'Heading Image';
-                } else if (!img.alt && img.src.includes('logo')) {
-                    img.alt = 'Logo';
-                }
-            });
-
-            const links = contentEl.querySelectorAll('a[href^="http"]');
-            links.forEach(link => {
-                if (!link.getAttribute('target')) {
-                    link.setAttribute('target', '_blank');
-                    link.setAttribute('rel', 'noopener noreferrer');
-                }
-            });
-
-            const anchorLinks = contentEl.querySelectorAll('a[href^="#"]');
-            anchorLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    const targetId = link.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        e.preventDefault();
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                        history.pushState(null, null, '#' + targetId);
-                    }
-                });
-            });
-        }
-
-        function handleHashNavigation() {
-            if (window.location.hash) {
-                setTimeout(() => {
-                    const targetElement = document.querySelector(window.location.hash);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }, 100);
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', async () => {
-            await loadMarkdown();
-            handleHashNavigation();
-        });
-
-        window.addEventListener('popstate', handleHashNavigation);
-    </script>
-</body>
-</html>
+<p align="right">
+<img alt="OmusBridge" src="../static/img/logo_omusbridge.png" width="80px" />
+</p>
+</div></details></section>
+<section id="contact" class="contact wrap" aria-labelledby="contact-heading"><p class="eyebrow">$ open connect <span class="command-comment"># 連絡先</span></p><h2 id="contact-heading"><span>一緒に考えたい課題は、</span><span>ありますか。</span></h2><p>仕事の経歴、コード、日々の活動、運営する会社。各プロフィールはこちらから。</p><div class="contact-links"><a href="https://skmt3p.com"><span>Portfolio</span><span aria-hidden="true">↗</span></a><a href="https://www.facebook.com/Skmt3P/"><span>Facebook</span><span aria-hidden="true">↗</span></a><a href="https://github.com/Skmt3P"><span>GitHub</span><span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/ryu-sakamoto-91957152/"><span>LinkedIn</span><span aria-hidden="true">↗</span></a><a href="https://omusbridge.com"><span>OmusBridge OÜ</span><span aria-hidden="true">↗</span></a></div></section></main></div>
+<div class="command-dock" id="command-line"><form id="terminal-command" hidden><label for="command-input">visitor@skmt3p:~ $</label><input id="command-input" name="command" autocomplete="off" spellcheck="false" maxlength="80" placeholder="help / work / about / contact" aria-describedby="command-help" /><button type="submit">実行 <span aria-hidden="true">↵</span></button></form><p id="command-help">コマンドでも、リンクのクリックでも探索できます。</p><p id="command-result" role="status"></p></div>
+<footer class="site-footer wrap"><span>Ryu Sakamoto / R.D.Sakamoto</span><a href="#top">先頭へ戻る ↑</a><a href="https://github.com/Skmt3P/skmt3p">原本リポジトリ ↗</a><span>UTF-8 / JA / portfolio</span></footer></div>
+<script src="../static/portfolio.js?v=decision-10" defer></script></body></html>
