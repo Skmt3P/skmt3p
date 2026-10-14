@@ -2,7 +2,7 @@ name: Deploy Portfolio on semantic release tag
 
 on:
   push:
-    tags: ['[0-9]*.[0-9]*.[0-9]*']
+    tags: ['portfolio/[0-9]*.[0-9]*.[0-9]*']
 
 permissions:
   contents: read
@@ -30,7 +30,7 @@ jobs:
         env:
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
-          [[ "$RELEASE_TAG" =~ ^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]]
+          [[ "$RELEASE_TAG" =~ ^portfolio/(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]]
           test "$(git rev-parse "refs/tags/$RELEASE_TAG^{commit}")" = "$(git rev-parse HEAD)"
           git fetch --no-tags origin refs/heads/master:refs/remotes/origin/master
           git merge-base --is-ancestor HEAD origin/master
