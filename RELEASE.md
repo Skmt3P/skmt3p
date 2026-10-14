@@ -8,13 +8,14 @@ pushes the same version tag in the public repository. Its Pages workflow checks
 the tag, verifies that it points to a commit on `master`, and publishes `docs/`.
 
 Before the first tag release, merge both the monorepo and public repository
-workflow changes. Then change the public repository's Pages **Build and
-deployment > Source** from `Deploy from a branch` to `GitHub Actions`. Permit
-semantic version tags to deploy to its `github-pages` environment. The existing
-environment currently permits only the `master` branch. Until the Pages source
-is changed, a direct push to `master` still publishes without a release tag.
+changes. On 2026-10-14, the GitHub Pages API reported `build_type: workflow`
+for the public repository, and its `github-pages` environment allowed the
+`master` branch and `portfolio/*` tags. Recheck both settings immediately
+before release. The workflow itself accepts only strict `portfolio/X.Y.Z`
+tags pointing to a commit on `master`; the environment pattern alone is
+broader than that validation.
 
 Do not move an existing version tag. A failed release can be recovered by
 rerunning its workflow or by tagging a reviewed corrective commit with a newer
-version. To roll back the Pages source setting, restore the previous
-`master/docs` branch source and verify the public site before further syncs.
+version. If the Pages deployment source is changed, restore the reviewed
+workflow setting and verify the public site before further syncs.
