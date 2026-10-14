@@ -38,6 +38,17 @@ addEventListener('hashchange', openHash)
 
 // The terminal is a navigation metaphor, never a shell or a remote request.
 const japanese = document.documentElement.lang === 'ja'
+const bridgePalette = japanese
+  ? {
+      field: '#304a6e', rail: '#88bcff', cable: '#d8ecff', tower: '#9ac8ff',
+      hanger: '#658fbc', deck: '#6d99c8', member: '#5076a5',
+      baseline: '#7299c2', baselinePost: '#a8c8e9', endpoint: '#bfd8f4', axis: '#405b80',
+    }
+  : {
+      field: '#294c36', rail: '#89dba2', cable: '#c9f5d6', tower: '#94efb0',
+      hanger: '#618c6e', deck: '#759c80', member: '#456d51',
+      baseline: '#72957d', baselinePost: '#a7c7ad', endpoint: '#b9d2c0', axis: '#345441',
+    }
 const commandForm = document.querySelector('#terminal-command')
 const commandInput = document.querySelector('#command-input')
 const commandResult = document.querySelector('#command-result')
@@ -45,7 +56,11 @@ const commandHistory = []
 let historyIndex = 0
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)')
 const motionButton = document.querySelector('.motion-toggle')
+const introVideo = document.querySelector('#intro-video')
+const videoError = document.querySelector('.video-error')
+const mobileVideo = matchMedia('(max-width: 640px)')
 let paused = reducedMotion.matches
+let heroVisible = true
 let frame = 0
 let visible = true
 let phase = 0
@@ -64,7 +79,56 @@ function setMotion(value) {
       ? 'Resume motion'
       : 'Pause motion'
   cancelAnimationFrame(frame)
+  if (introVideo) {
+    if (paused) introVideo.pause()
+    else playIntroVideo()
+  }
   drawBridge()
+}
+async function playIntroVideo() {
+  if (!introVideo || paused || document.hidden || !heroVisible) return
+  try {
+    await introVideo.play()
+  } catch {
+    // Browser autoplay policy keeps the poster and manual motion control available.
+  }
+}
+if (introVideo) {
+  function selectIntroVideo() {
+    const source = mobileVideo.matches
+      ? introVideo.dataset.mobile
+      : introVideo.dataset.desktop
+    if (!source) return
+    introVideo.poster = mobileVideo.matches
+      ? introVideo.dataset.mobilePoster
+      : introVideo.dataset.desktopPoster
+    if (introVideo.getAttribute('src') !== source) introVideo.src = source
+  }
+  selectIntroVideo()
+  mobileVideo.addEventListener('change', selectIntroVideo)
+  introVideo.addEventListener('loadeddata', () => {
+    if (videoError) videoError.hidden = true
+    playIntroVideo()
+  })
+  introVideo.addEventListener('error', () => {
+    if (videoError) videoError.hidden = false
+  })
+  document.querySelector('#retry-video')?.addEventListener('click', () => {
+    if (videoError) videoError.hidden = true
+    introVideo.load()
+  })
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) introVideo.pause()
+    else playIntroVideo()
+  })
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => {
+      heroVisible = entry.isIntersecting
+      if (!heroVisible) introVideo.pause()
+      else playIntroVideo()
+    }).observe(introVideo)
+  }
+  playIntroVideo()
 }
 if (motionButton) {
   motionButton.hidden = false
@@ -208,44 +272,44 @@ function drawBridge(now = 0) {
     for (let x = -3.8; x <= 3.8; x += 0.4) {
       for (let z = -1.3; z <= 1.7; z += 0.4) {
         const [px, py] = projected(x, -0.28, z)
-        ctx.fillStyle = '#294c36'
+        ctx.fillStyle = bridgePalette.field
         ctx.fillRect(px, py, 1, 1)
       }
     }
     let seed = 0
     for (const z of [-0.65, 0.65]) {
       for (let x = -3.5; x <= 3.5; x += 0.13) {
-        point(x, 0.15, z, '═', '#89dba2', seed++)
+        point(x, 0.15, z, '═', bridgePalette.rail, seed++)
         const cable = 0.55 + 1.5 * Math.pow(Math.abs(x) / 2.25, 2)
-        if (Math.abs(x) <= 2.3) point(x, cable, z, '+', '#c9f5d6', seed++)
+        if (Math.abs(x) <= 2.3) point(x, cable, z, '+', bridgePalette.cable, seed++)
       }
       for (const x of [-2.25, 2.25]) {
         for (let y = 0; y < 2.35; y += 0.105)
-          point(x, y, z, '║', '#94efb0', seed++)
+          point(x, y, z, '║', bridgePalette.tower, seed++)
       }
       for (let x = -2; x <= 2; x += 0.4) {
         const top = 0.55 + 1.5 * Math.pow(Math.abs(x) / 2.25, 2)
         for (let y = 0.32; y < top; y += 0.15)
-          point(x, y, z, '│', '#618c6e', seed++)
+          point(x, y, z, '│', bridgePalette.hanger, seed++)
       }
     }
     for (let x = -3.5; x < 3.5; x += 0.28) {
       for (let z = -0.55; z < 0.65; z += 0.24)
-        point(x, 0.13, z, '·', '#759c80', seed++)
+        point(x, 0.13, z, '·', bridgePalette.deck, seed++)
     }
     // Cross-members make the plan view a connected deck, not two separate elevations.
     if (construction > 0.1) {
       ctx.globalAlpha = progress
       for (let x = -3.45; x <= 3.45; x += 0.48) {
-        line([x, 0.13, -0.65], [x, 0.13, 0.65], '#456d51')
+        line([x, 0.13, -0.65], [x, 0.13, 0.65], bridgePalette.member)
       }
       ctx.globalAlpha = 1
     }
     if (construction > 0.1) {
       ctx.globalAlpha = progress
-      line([-3.5, -0.42, 0.8], [3.5, -0.42, 0.8], '#72957d', [3, 4])
+      line([-3.5, -0.42, 0.8], [3.5, -0.42, 0.8], bridgePalette.baseline, [3, 4])
       for (const x of [-3.5, 3.5])
-        line([x, -0.55, 0.8], [x, -0.28, 0.8], '#a7c7ad')
+        line([x, -0.55, 0.8], [x, -0.28, 0.8], bridgePalette.baselinePost)
       ctx.globalAlpha = 1
     }
     if (construction > 1) {
@@ -260,12 +324,12 @@ function drawBridge(now = 0) {
     }
     // Endpoints describe the metaphor; these are not fabricated measurements.
     ctx.font = '10px Menlo, monospace'
-    ctx.fillStyle = '#b9d2c0'
+    ctx.fillStyle = bridgePalette.endpoint
     ctx.textAlign = 'left'
     ctx.fillText('PEOPLE', 20, h - 15)
     ctx.textAlign = 'right'
     ctx.fillText('TECHNOLOGY', w - 20, h - 15)
-    ctx.strokeStyle = '#345441'
+    ctx.strokeStyle = bridgePalette.axis
     ctx.beginPath()
     ctx.moveTo(72, h - 19)
     ctx.lineTo(w - 98, h - 19)

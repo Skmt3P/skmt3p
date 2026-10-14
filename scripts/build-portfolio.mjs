@@ -1,6 +1,7 @@
 import { readFile, writeFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import { createRequire } from 'node:module'
+import { createHash } from 'node:crypto'
 
 // Reuse the Markdown engine of the already declared PDF renderer.
 const { marked } = createRequire(import.meta.resolve('md-to-pdf'))('marked')
@@ -13,10 +14,10 @@ const copy = {
     about: 'Experience',
     contact: 'Get in touch',
     title:
-      '<span>Ideas in.</span><span>Products out<span class="cursor" aria-hidden="true">_</span></span>',
+      '<span>Ideas in</span><span>Products out<span class="cursor" aria-hidden="true">_</span></span>',
     intro:
       'I’m Ryu Sakamoto. I connect business, people and software — from an idea to something people can use.',
-    statement: 'Small tools.\nRoom for possibility.',
+    statement: 'Small tools\nRoom for possibility',
     description:
       'Products from OmusBridge: a space to write, a way to learn, and a small city to explore.',
     role: 'OmusBridge · Product development',
@@ -39,7 +40,7 @@ const copy = {
       "Northlight brings two northern cities into an imagined neighborhood built with Babylon.js. Explore the streets at your own pace, from the shapes of historic buildings to the lights around you.",
     northlightImage:
       "Northlight: snow, neon and historic buildings in a 3D miniature city",
-    expertise: 'Across the whole delivery.',
+    expertise: 'Across the whole delivery',
     skills: [
       [
         '01',
@@ -57,12 +58,12 @@ const copy = {
         'Team leadership, delivery and continuous improvement with AI-assisted workflows.',
       ],
     ],
-    resume: 'The experience behind the work.',
+    resume: 'The experience behind the work',
     resumeText:
       'Project management, engineering and business operations. Read the full background below.',
     read: 'Career, activities & qualifications',
     source: 'Text résumé',
-    contactTitle: 'A problem worth working on?',
+    contactTitle: 'A problem worth working on',
     contactText:
       'Professional background, code, everyday updates and the company I build.',
     top: 'Back to top',
@@ -89,10 +90,10 @@ const copy = {
     about: '経歴と専門領域',
     contact: '連絡先',
     title:
-      '<span>考える。</span><span>つくる。動かす<span class="cursor" aria-hidden="true">_</span></span>',
+      '<span>考える</span><span>つくる 動かす<span class="cursor" aria-hidden="true">_</span></span>',
     intro:
       'Ryu Sakamoto。事業と人、ソフトウェアの間に立ち、アイデアを実際に使えるプロダクトへつなぎます。',
-    statement: '小さな道具から、\nできることを広げる。',
+    statement: '小さな道具から\nできることを広げる',
     description:
       '書くための場所、場面から学ぶ語学、歩いて楽しむ小さな街。OmusBridgeで取り組むプロダクトです。',
     role: 'OmusBridge · 自社プロダクト開発',
@@ -114,7 +115,7 @@ const copy = {
     northlightDetail:
       "北灯街（Northlight）は、二つの北の街を一つの架空の街区へつなぐ、Babylon.js製の3D体験です。歴史建築のかたちや街の灯りを、自分のペースで歩いて楽しめます。",
     northlightImage: "北灯街：雪とネオン、歴史建築を組み合わせた3Dの箱庭",
-    expertise: '<span>構想から、</span><span>動くところまで。</span>',
+    expertise: '<span>構想から</span><span>動くところまで</span>',
     skills: [
       [
         '01',
@@ -132,13 +133,13 @@ const copy = {
         'チーム運営、デリバリ、業務改善。AIを活用した開発と運用にも取り組んでいます。',
       ],
     ],
-    resume: '仕事を支える、これまでの経験。',
+    resume: '仕事を支える これまでの経験',
     resumeText:
       'プロジェクトマネジメント、エンジニアリング、事業運営。詳しい経歴をまとめています。',
     read: '職歴・活動・資格を読む',
     source: 'テキスト版の経歴',
     contactTitle:
-      '<span>一緒に考えたい課題は、</span><span>ありますか。</span>',
+      '<span>一緒に考えたい課題は</span><span>ありますか</span>',
     contactText:
       '仕事の経歴、コード、日々の活動、運営する会社。各プロフィールはこちらから。',
     top: '先頭へ戻る',
@@ -164,6 +165,23 @@ for (const [locale, t] of Object.entries(copy)) {
   const ja = locale === 'ja'
   const prefix = ja ? '../' : './'
   const dir = ja ? `${docs}ja/` : docs
+  const videoAsset = async (name) => {
+    const hash = createHash('sha256')
+      .update(await readFile(`${docs}static/video/${name}`))
+      .digest('hex')
+      .slice(0, 12)
+    return `${prefix}static/video/${name}?v=${hash}`
+  }
+  const desktopVideo = await videoAsset(`intro-${locale}.mp4`)
+  const mobileVideo = await videoAsset(`intro-${locale}-mobile.mp4`)
+  const desktopPoster = await videoAsset(`intro-${locale}.jpg`)
+  const mobilePoster = await videoAsset(`intro-${locale}-mobile.jpg`)
+  const assetVersion = async (name) => createHash('sha256')
+    .update(await readFile(`${docs}static/${name}`))
+    .digest('hex')
+    .slice(0, 12)
+  const cssVersion = await assetVersion('portfolio.css')
+  const jsVersion = await assetVersion('portfolio.js')
   const md = (await readFile(`${dir}README.md`, 'utf8')).replace(
     /^---[\s\S]*?---\n?/,
     ''
@@ -216,7 +234,7 @@ for (const [locale, t] of Object.entries(copy)) {
   </article>`
   const trace = `<section id="trace" class="decision-trace" aria-labelledby="trace-heading">
   <div class="trace-heading"><div><p class="eyebrow">$ trace --from=question --to=product</p><h3 id="trace-heading">${
-    ja ? '判断の中を、歩く。' : 'Step inside a decision.'
+    ja ? '判断の中を歩く' : 'Step inside a decision'
   }</h3></div><p>${
     ja
       ? '課題・判断・検証を選ぶと、設計の意図が見えてきます。'
@@ -270,28 +288,28 @@ for (const [locale, t] of Object.entries(copy)) {
     )
     .join('')}
   </section>`
-  const html = `<!doctype html>
+  let html = `<!doctype html>
 <html lang="${locale}"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Ryu Sakamoto — ${
     ja ? '技術と事業をつなぐ' : 'Technology & delivery'
   }</title>
 <meta name="description" content="${
     t.intro
-  }" /><meta name="theme-color" content="#0c1512" />
-<link rel="icon" href="${prefix}static/favicon.svg" type="image/svg+xml" /><link rel="stylesheet" href="${prefix}static/portfolio.css?v=decision-10" />
+  }" /><meta name="theme-color" content="${ja ? '#0a1422' : '#0c1512'}" />
+<link rel="icon" href="${prefix}static/${ja ? 'favicon-ja.svg' : 'favicon.svg'}" type="image/svg+xml" /><link rel="stylesheet" href="${prefix}static/portfolio.css?v=${cssVersion}" />
 <link rel="alternate" hreflang="en" href="https://skmt3p.com/" /><link rel="alternate" hreflang="ja" href="https://skmt3p.com/ja/" />
 </head><body id="top"><a class="skip-link" href="#content">${t.skip}</a>
 <div class="terminal-shell"><div class="terminal-top"><span class="terminal-lights" aria-hidden="true"><i></i><i></i><i></i></span><a class="session-brand" href="#top" aria-label="skmt3p — ${
     ja ? 'ホーム' : 'Home'
-  }"><img src="${prefix}static/identity.svg" width="28" height="28" alt="" /></a><span class="session-title">skmt3p@portfolio: ~ <span class="session-kind">— terminal session</span></span><button class="motion-toggle" type="button" hidden aria-pressed="false">${
+  }"><img src="${prefix}static/${ja ? 'identity-ja.svg' : 'identity.svg'}" width="28" height="28" alt="" /></a><span class="session-title">skmt3p@portfolio: ~ <span class="session-kind">— terminal session</span></span><button class="motion-toggle" type="button" hidden aria-pressed="false">${
     ja ? '動きを止める' : 'Pause motion'
   }</button></div>
 
-<header class="site-header"><a class="identity" href="#top"><img class="identity-mark" src="${prefix}static/identity.svg" width="34" height="34" alt="" /><span class="identity-name">skmt3p</span><span class="host">@portfolio</span></a><nav aria-label="${
+<header class="site-header"><a class="identity" href="#top"><img class="identity-mark" src="${prefix}static/${ja ? 'identity-ja.svg' : 'identity.svg'}" width="34" height="34" alt="" /><span class="identity-name">skmt3p</span><span class="host">@portfolio</span></a><nav aria-label="${
     ja ? 'メイン' : 'Main'
-  }"><a href="#top">[ ~ ]</a><a href="#work">[ work ] <span>${
+  }"><a href="#top">[ ~ ]</a><a href="#experience">[ experience ]</a><a href="#work">[ work ] <span>${
     t.work
-  }</span></a><a href="#experience">[ experience ]</a><a href="#contact">${
+  }</span></a><a href="#contact">${
     t.contact
   } ↗</a><a href="#command-line" aria-label="${
     ja ? 'コマンド入力へ' : 'Command input'
@@ -302,7 +320,7 @@ for (const [locale, t] of Object.entries(copy)) {
   }>JA</a></nav></header>
 <div class="terminal-workspace"><aside class="file-tree" aria-label="${
     ja ? 'ファイル案内' : 'File explorer'
-  }"><p class="tree-title">~/portfolio</p><a href="#top"><span>├─</span> whoami</a><a href="#work"><span>├─</span> work/ <small>03</small></a><a class="tree-child" href="#Kakiba-title">│  ├─ kakiba</a><a class="tree-child" href="#Langle-title">│  ├─ langle</a><a class="tree-child" href="#Northlight-title">│  └─ northlight</a><a href="#experience"><span>├─</span> experience</a><a href="#contact"><span>└─</span> connect</a><div class="tree-note"><span>READ / EXPLORE</span><p>${
+  }"><p class="tree-title">~/portfolio</p><a href="#top"><span>├─</span> whoami</a><a href="#experience"><span>├─</span> experience</a><a href="#work"><span>├─</span> work/ <small>03</small></a><a class="tree-child" href="#Kakiba-title">│  ├─ kakiba</a><a class="tree-child" href="#Langle-title">│  ├─ langle</a><a class="tree-child" href="#Northlight-title">│  └─ northlight</a><a href="#contact"><span>└─</span> connect</a><div class="tree-note"><span>READ / EXPLORE</span><p>${
     ja
       ? '事業と人と技術を、<br />つなぐ仕事の記録。'
       : 'A record of connecting<br />business, people & code.'
@@ -396,7 +414,7 @@ for (const [locale, t] of Object.entries(copy)) {
     t.northlightDetail,
     'northlight.omusb.app/',
     '03'
-  )}</div></section>
+  )}</div><a class="all-works" href="https://omusb.app/">${ja ? 'omusb.app で作品一覧を見る' : 'Explore all work on omusb.app'} <span aria-hidden="true">↗</span></a></section>
 <section id="experience" class="experience wrap" aria-labelledby="experience-heading"><div class="section-title"><p class="eyebrow">$ cat experience <span class="command-comment"># ${
     t.about
   }</span></p><h2 id="experience-heading">${
@@ -418,7 +436,7 @@ for (const [locale, t] of Object.entries(copy)) {
     .map(([id, label]) => `<a href="#${id}">${label} ↗</a>`)
     .join(
       ''
-    )}</nav><details class="resume"><summary><span><span class="file-label">experience.md</span> ${
+    )}</nav><details class="resume" open><summary><span><span class="file-label">experience.md</span> ${
     t.resume
   }</span><span class="resume-action">${
     t.read
@@ -444,16 +462,36 @@ for (const [locale, t] of Object.entries(copy)) {
   } ↑</a><a href="https://github.com/Skmt3P/skmt3p">${
     ja ? '原本リポジトリ' : 'Source repository'
   } ↗</a><span>UTF-8 / ${locale.toUpperCase()} / portfolio</span></footer></div>
-<script src="${prefix}static/portfolio.js?v=decision-10" defer></script></body></html>`
+<script src="${prefix}static/portfolio.js?v=${jsVersion}" defer></script></body></html>`
+  const homeStart = html.indexOf('<section id="home"')
+  const workStart = html.indexOf('<section id="work"')
+  const experienceStart = html.indexOf('<section id="experience"')
+  const contactSectionStart = html.indexOf('<section id="contact"')
+  if (!(homeStart > 0 && homeStart < workStart && workStart < experienceStart && experienceStart < contactSectionStart)) {
+    throw new Error(`Portfolio section order changed: ${locale}`)
+  }
+  const story = html
+    .slice(homeStart, workStart)
+    .replace('<section id="home" class="hero wrap" aria-labelledby="intro-heading">', '<div class="hero work-story" aria-labelledby="work-story-heading">')
+    .replace('<h1 id="intro-heading">', '<h3 id="work-story-heading">')
+    .replace('</h1>', '</h3>')
+    .replace(/<\/section>\s*$/, '</div>')
+  const work = html.slice(workStart, experienceStart)
+  if (!work.includes('<section id="trace"')) throw new Error(`Missing work trace: ${locale}`)
+  const videoHero = `<section id="home" class="hero-video" aria-labelledby="intro-heading"><h1 id="intro-heading" class="visually-hidden">Ryu Sakamoto — ${ja ? '技術と事業をつなぐ' : 'Technology to delivery'}</h1><video id="intro-video" muted loop playsinline preload="metadata" poster="${desktopPoster}" data-desktop="${desktopVideo}" data-mobile="${mobileVideo}" data-desktop-poster="${desktopPoster}" data-mobile-poster="${mobilePoster}" aria-label="${ja ? 'Ryu Sakamotoの紹介動画' : 'Ryu Sakamoto introduction video'}" aria-describedby="intro-video-description"><source src="${mobileVideo}" media="(max-width:640px)" type="video/mp4" /><source src="${desktopVideo}" type="video/mp4" /></video><p id="intro-video-description" class="visually-hidden">${ja ? '無音の端末アニメーションで Ryu Sakamoto、技術と事業をつなぐ、TPM × FDE の順に表示します。' : 'Silent terminal animation introduces Ryu Sakamoto, then Technology to delivery, then TPM × FDE.'}</p><div class="video-error" role="status" hidden><p>${ja ? '紹介動画を読み込めませんでした' : 'The introduction video could not be loaded'}</p><button type="button" id="retry-video">${ja ? '動画を再読み込み' : 'Retry video'}</button><a href="#experience">${ja ? '職務経歴を読む' : 'Read the résumé'} ↓</a></div><a class="career-cue" href="#experience">${ja ? '職務経歴を読む' : 'Read the résumé'} ↓</a></section>\n`
+  html = html.slice(0, homeStart)
+    + videoHero
+    + html.slice(experienceStart, contactSectionStart)
+    + work.replace('<section id="trace"', `${story}<section id="trace"`)
+    + html.slice(contactSectionStart)
   await writeFile(`${dir}index.html`, html)
   if (!ja) {
     const notFound = html
       .replace('<title>Ryu Sakamoto', '<title>404 — Ryu Sakamoto')
-      .replaceAll('href="./', 'href="/')
-      .replaceAll('src="./', 'src="/')
+      .replaceAll('="./static/', '="/static/')
       .replace(
-        '<div class="terminal-body">',
-        '<div class="path-error" role="status"><p>$ open requested-path</p><h2>404: Path not found.</h2><p>That address is not in this portfolio. Explore the files below, or <a href="/">return to the home path</a>.</p><p lang="ja">このアドレスは見つかりません。<a href="/ja/">日本語のポートフォリオへ戻る</a></p></div><div class="terminal-body">'
+        /<section id="home"[\s\S]*?<\/section>/,
+        '<section id="home" class="path-error wrap" role="status"><p>$ open requested-path</p><h1>404 Path not found</h1><p>That address is not in this portfolio. Explore the files below, or <a href="/">return to the home path</a>.</p><p lang="ja">このアドレスは見つかりません。<a href="/ja/">日本語のポートフォリオへ戻る</a></p></section>'
       )
     await writeFile(`${docs}404.html`, notFound)
   }

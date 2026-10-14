@@ -1,0 +1,22 @@
+name: Portfolio quality
+
+on:
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'scripts/**'
+      - '.github/workflows/portfolio-quality.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.14
+      - run: bun install
+      - run: node --check scripts/build-portfolio.mjs
+      - run: node --check docs/static/portfolio.js
+      - run: node scripts/build-portfolio.mjs
+      - run: git diff --exit-code -- docs
