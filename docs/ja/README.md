@@ -267,7 +267,7 @@ SAP ERP(FI, SD, MM), ABAP
   <a href="https://www.facebook.com/Skmt3P/" target="_blank" rel="noopener noreferrer">Facebook</a>
   <a href="https://github.com/Skmt3P" target="_blank" rel="noopener noreferrer">GitHub</a>
   <a href="https://www.linkedin.com/in/ryu-sakamoto-91957152/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-  <a href="https://omusbridge.com" target="_blank" rel="noopener noreferrer">OmusBridge OÜ</a>
+  <a href="https://omusbridge.com" target="_blank" rel="noopener noreferrer">OmusBridge</a>
 </div>
 
 <p align="right">
