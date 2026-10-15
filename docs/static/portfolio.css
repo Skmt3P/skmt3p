@@ -408,6 +408,41 @@ section + section {
   object-fit: contain;
 }
 
+.career-signal {
+  position: absolute;
+  z-index: 1;
+  top: 24px;
+  right: 24px;
+
+  display: grid;
+  gap: 3px;
+
+  max-width: min(360px, calc(100% - 48px));
+  min-height: 44px;
+  padding: 10px 14px;
+  border-left: 2px solid var(--accent);
+
+  font: 11px/1.5 var(--mono);
+  color: var(--muted);
+  text-decoration: none;
+
+  background: var(--surface-deep);
+}
+
+.career-signal:hover {
+  background: var(--surface-panel);
+}
+
+.career-signal strong {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.career-signal-command {
+  color: var(--accent);
+}
+
 .career-cue {
   position: absolute;
   right: 24px;
@@ -457,6 +492,13 @@ section + section {
   .hero-video {
     height: calc(100svh - 132px);
     min-height: 300px;
+  }
+
+  .career-signal {
+    top: 16px;
+    right: 16px;
+    max-width: calc(100% - 32px);
+    padding: 8px 11px;
   }
 
   .career-cue {
