@@ -444,6 +444,10 @@ section + section {
   font-size: clamp(28px, 3vw, 44px);
 }
 
+.work-story #work-story-heading > span {
+  display: block;
+}
+
 @media (width <= 640px) {
   .hero-video {
     height: calc(100svh - 132px);
@@ -453,10 +457,6 @@ section + section {
   .career-cue {
     right: 16px;
     bottom: 12px;
-  }
-
-  .work-story #work-story-heading {
-    font-size: clamp(28px, 9vw, 42px);
   }
 }
 
@@ -504,10 +504,25 @@ h3 {
   letter-spacing: -0.04em;
 }
 
+.work-story #work-story-heading {
+  font-family: var(--mono);
+  letter-spacing: 0;
+}
+
 html[lang='ja'] .hero h1,
 html[lang='ja'] .work-story #work-story-heading {
   font-size: clamp(26px, 3vw, 43px);
   line-height: 1.5;
+}
+
+@media (width <= 640px) {
+  .work-story #work-story-heading {
+    font-size: clamp(28px, 9vw, 36px);
+  }
+
+  html[lang='ja'] .work-story #work-story-heading {
+    font-size: clamp(26px, 8vw, 34px);
+  }
 }
 
 h1 span {
@@ -639,10 +654,6 @@ h1 .cursor {
   margin: 0 0 10px;
   font: 23px/1.6 var(--display);
   color: var(--ink);
-}
-
-.section-title h2 br {
-  display: none;
 }
 
 .section-title h2 span,
