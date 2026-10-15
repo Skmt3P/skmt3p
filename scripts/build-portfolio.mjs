@@ -349,7 +349,7 @@ for (const [locale, t] of Object.entries(copy)) {
   }</p><p class="proof-copy" aria-live="polite">${
     t.cases.Kakiba[1]
   }</p></div><a class="proof-image-link" href="#trace" aria-label="${
-    ja ? '判断記録で実画面を詳しく見る' : 'Inspect the full design decision'
+    ja ? '実画面 ↗ — 判断記録で詳しく見る' : 'ACTUAL UI ↗ — Inspect the full design decision'
   }"><img class="proof-image" src="${prefix}static/work/kakiba-hero-1.png?v=decision10" alt="${
     ja ? 'Kakiba: 段落の読み尺と原稿' : 'Kakiba: paragraph ruler and draft'
   }" width="1440" height="1000" /><span>${
