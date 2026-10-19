@@ -13,6 +13,9 @@
   --line: #345441;
   --amber: #eed197;
   --cyan: #9bdfd5;
+  --bridge-red: #b01a30;
+  --bridge-navy: #18335d;
+  --bridge-paper: #f6f7f5;
   --page-bg: #030805;
   --surface-deep: #09180f;
   --surface-panel: #09170f;
@@ -167,15 +170,19 @@ button {
 .terminal-lights i {
   width: 8px;
   height: 8px;
-  border: 1px solid var(--strong-line);
+  border: 1px solid var(--bridge-paper);
+}
+
+.terminal-lights i:first-child {
+  background: var(--bridge-red);
 }
 
 .terminal-lights i:nth-child(2) {
-  background: var(--text-low);
+  background: var(--bridge-navy);
 }
 
 .terminal-lights i:nth-child(3) {
-  background: var(--accent);
+  background: var(--bridge-paper);
 }
 
 .session-title {
@@ -1036,6 +1043,10 @@ summary {
 
 .contact-links a:hover {
   background: var(--accent-wash);
+}
+
+.contact-links a[href^='https://omusbridge.com'] {
+  border-left: 3px solid var(--bridge-red);
 }
 
 .command-dock {
