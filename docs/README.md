@@ -240,7 +240,7 @@ SAP ERP (FI, SD, MM), ABAP
 
 Separate from the professional experience above, I also have experience in public communication, education, and community activities.
 
-- **OmusBridge OÜ President / Management Board Member**: Business planning, MVP exploration, web application development, coaching, consulting, and project management for company products.
+- **OmusBridge product work**: Business planning, MVP exploration, web application development, coaching, consulting, and project management across OmusBridge products.
 - **Writer for the web media "& Engineer"**: Handled interviews with engineers and article writing.
 - **Cafetalk ICT Instructor**: Answered a wide range of questions, from Office products to programming.
 - **VR / Metaverse Activities**: Created avatars and worlds, and organized events inside metaverse services.
